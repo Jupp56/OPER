@@ -1,9 +1,5 @@
 <?php
-const MYSQLI_IP = "localhost";
-const MYSQLI_PORT = 3306;
-const MYSQLI_USER = "test";
-const MYSQLI_PASS = "test123";
-const MYSQLI_DB = "oper";
+require_once("constants.php");
 
 $mysqli = new mysqli(MYSQLI_IP, MYSQLI_USER, MYSQLI_PASS, MYSQLI_DB, MYSQLI_PORT);
 
