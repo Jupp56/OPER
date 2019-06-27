@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <title>OPER-Login</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -8,16 +9,41 @@
     <link rel="stylesheet" href="styles.css">
     <script lang="javascript" type="text/javascript">
 
-        
-        var dataset = [
-            ["blah", "blub", "param"],
-            ["blah", "blub", "param"]
-        ];
 
-        function populatearr() {
+        // var dataset = [
+        //     ["blah", "blub", "param"],
+        //     ["blah", "blub", "param"]
+        // ];
+
+        function getusers() {
+
+
+            var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 2).toString().replace(/\,/g, '/');
+            var xmlHttp = new XMLHttpRequest();
+            alert(baseurl + 'getusers.php');
+            xmlHttp.open("GET", baseurl + '/getusers.php', true); //true for asynchronous request
+
+            xmlHttp.onload = function (e) {
+                if (xmlHttp.status === 200) {
+                    var result = xmlHttp.responseText;
+                    var dataset = JSON.parse(result);
+                    fillarr(dataset);
+                }
+                else {
+                    console.log(xmlHttp.statusText);
+                }
+            }
+            xmlHttp.send(null);
+
+        }
+
+        function fillarr(array) {
+
             var table = document.getElementById("usertable");
+
             for (var i = 0; i < dataset.length; i++) {
                 var row = document.createElement("tr");
+
                 for (var j = 0; j < 3; j++) {
                     var cell = document.createElement("td");
                     var cellText = document.createTextNode(dataset[i][j]);
@@ -26,16 +52,13 @@
                 }
                 table.appendChild(row);
             }
-
         }
 
-        window.onload = populatearr;
-
-
+        window.onload = getusers;
 
     </script>
 
-    <meta charset="utf-8">
+
 </head>
 
 <body>
@@ -52,10 +75,14 @@
             <main class="col-12" role="main">
                 <div class="table-responsive">
                     <table id="usertable" class="table table-hover">
+                        <thead>
+                            <th>Name</th>
+                            <th>Mailadresse</th>
+                            <th>Sonstiges</th>
+                        </thead>
                     </table>
                 </div>
             </main>
-            <button onclick="tablefill()">but</button>
 
         </div>
     </div>
