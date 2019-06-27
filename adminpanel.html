@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>OPER-Login</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script lang="javascript" type="text/javascript">
+
+        var table = document.getElementById("usertable");
+        var dataset = [
+            ["blah", "blub", "param"],
+            ["blah", "blub", "param"]
+        ];
+
+        function populatearr(){
+            for(var i =0; i<dataset.length(); i++){
+                var row = document.createElement("tr");
+                for (var j =0; j<3; j++){
+                    var cell = 
+                }
+            }
+        }
+
+    </script>
+
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="userdata">
+        <div class="row ">
+            <div class="col-auto myborder">
+                Benutzer: Nutzername<br>
+                <button class="mt-1 float-right">Abmelden</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-5">
+        <div class="row flex-xl-nowrap ml-5 mr-5">
+            <main class="col-12" role="main">
+                <div class="table-responsive">
+                    <table id="usertable" class="table table-hover">
+                        <thead>
+                            <th scope="col">Benutzername</th>
+                            <th scope="col">Mail</th>
+                            <th scope="col">Passwort zurücksetzen</th>
+                        </thead>
+                        <tbody id="usertablebody">
+                            <tr>
+                                <td>Hier</td>
+                                <td>sollte</td>
+                                <td>Inhalt sein</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+            <button onclick="tablefill()">but</button>
+
+        </div>
+    </div>
+</body>
+
+<footer>
+    <!-- <link rel="import" href="footer.html">-->
+    <iframe sandbox="allow-top-navigation allow-scripts allow-forms" class="footer" src="footer.html"></iframe>
+</footer>
+
+</html>
