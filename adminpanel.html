@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="styles.css">
     <script lang="javascript" type="text/javascript">
 
-        var table = document.getElementById("usertable");
+        
         var dataset = [
             ["blah", "blub", "param"],
             ["blah", "blub", "param"]
         ];
 
         function populatearr() {
-            for (var i = 0; i < dataset.length(); i++) {
+            var table = document.getElementById("usertable");
+            for (var i = 0; i < dataset.length; i++) {
                 var row = document.createElement("tr");
                 for (var j = 0; j < 3; j++) {
                     var cell = document.createElement("td");
@@ -28,7 +29,8 @@
 
         }
 
-        window.onload = populatearr;GI
+        window.onload = populatearr;
+
 
 
     </script>
@@ -50,18 +52,6 @@
             <main class="col-12" role="main">
                 <div class="table-responsive">
                     <table id="usertable" class="table table-hover">
-                        <thead>
-                            <th scope="col">Benutzername</th>
-                            <th scope="col">Mail</th>
-                            <th scope="col">Passwort zurücksetzen</th>
-                        </thead>
-                        <tbody id="usertablebody">
-                            <tr>
-                                <td>Hier</td>
-                                <td>sollte</td>
-                                <td>Inhalt sein</td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </main>
