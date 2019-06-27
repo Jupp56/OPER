@@ -2,62 +2,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>OPER-Login</title>
+    <title>OPER-Admin Panel</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <script lang="javascript" type="text/javascript">
-
-
-        // var dataset = [
-        //     ["blah", "blub", "param"],
-        //     ["blah", "blub", "param"]
-        // ];
-
-        function getusers() {
-
-
-            var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 2).toString().replace(/\,/g, '/');
-            var xmlHttp = new XMLHttpRequest();
-            alert(baseurl + 'getusers.php');
-            xmlHttp.open("GET", baseurl + '/getusers.php', true); //true for asynchronous request
-
-            xmlHttp.onload = function (e) {
-                if (xmlHttp.status === 200) {
-                    var result = xmlHttp.responseText;
-                    var dataset = JSON.parse(result);
-                    fillarr(dataset);
-                }
-                else {
-                    console.log(xmlHttp.statusText);
-                }
-            }
-            xmlHttp.send(null);
-
-        }
-
-        function fillarr(array) {
-
-            var table = document.getElementById("usertable");
-
-            for (var i = 0; i < dataset.length; i++) {
-                var row = document.createElement("tr");
-
-                for (var j = 0; j < 3; j++) {
-                    var cell = document.createElement("td");
-                    var cellText = document.createTextNode(dataset[i][j]);
-                    cell.appendChild(cellText);
-                    row.appendChild(cell);
-                }
-                table.appendChild(row);
-            }
-        }
-
-        window.onload = getusers;
-
-    </script>
-
+    <script lang="javascript" type="text/javascript" src="adminpanel.js"></script>
 
 </head>
 
