@@ -14,14 +14,22 @@
             ["blah", "blub", "param"]
         ];
 
-        function populatearr(){
-            for(var i =0; i<dataset.length(); i++){
+        function populatearr() {
+            for (var i = 0; i < dataset.length(); i++) {
                 var row = document.createElement("tr");
-                for (var j =0; j<3; j++){
-                    var cell = 
+                for (var j = 0; j < 3; j++) {
+                    var cell = document.createElement("td");
+                    var cellText = document.createTextNode(dataset[i][j]);
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
                 }
+                table.appendChild(row);
             }
+
         }
+
+        window.onload = populatearr;GI
+
 
     </script>
 
