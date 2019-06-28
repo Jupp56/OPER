@@ -8,13 +8,13 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('SELECT * FROM Users AS JSON');
+$stmt = $mysqli->query('SELECT * FROM Users');
 
 $users = array();
 
 if ($stmt->execute()){
     while ($row = $stmt->fetch_assoc()){
-        $users->push($row);
+        $users[] = $row;
     }
     echo json_encode($users);
 } else {
