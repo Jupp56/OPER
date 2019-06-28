@@ -32,12 +32,12 @@ function fillarr(array) {
 
     var table = document.getElementById("usertable");
 
-    for (var i = 0; i < dataset.length; i++) {
+    for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
 
         for (var j = 0; j < 3; j++) {
             var cell = document.createElement("td");
-            var cellText = document.createTextNode(dataset[i][j]);
+            var cellText = document.createTextNode(array[i][j]);
             cell.appendChild(cellText);
             row.appendChild(cell);
         }
