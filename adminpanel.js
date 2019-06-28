@@ -27,7 +27,15 @@ function fillarr(array) {
 
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
-        row.onclick=getdetails(array[i].Username);
+        var createClickHandler =
+            function (row) {
+                return function () {
+                    var cell = row.getElementsByTagName("td")[0];
+                    var id = cell.innerHTML;
+                    alert("id:" + id);
+                };
+            };
+        row.onclick = createClickHandler(row);
         row.appendChild(createtd(array[i].Username));
         row.appendChild(createtd(array[i].Mail));
         row.appendChild(createtd(array[i].Salt));
@@ -43,7 +51,7 @@ function createtd(tdvalue) {
     return cell;
 }
 
-function getdetails(){
+function getdetails() {
     console.log("details");
 }
 
