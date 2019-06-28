@@ -1,9 +1,3 @@
-
-// var dataset = [
-//     ["blah", "blub", "param"],
-//     ["blah", "blub", "param"]
-// ];
-
 function getusers() {
 
 
@@ -35,12 +29,27 @@ function fillarr(array) {
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
 
-        for (var j = 0; j < 3; j++) {
-            var cell = document.createElement("td");
-            var cellText = document.createTextNode(array[i][j]);
-            cell.appendChild(cellText);
-            row.appendChild(cell);
-        }
+        var cell = document.createElement("td");
+        var cellText = document.createTextNode(array[i].Username);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+
+        var cell = document.createElement("td");
+        var cellText = document.createTextNode(array[i].Mail);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+
+        var cell = document.createElement("td");
+        var cellText = document.createTextNode(array[i].Salt);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+
+        // for (var j = 0; j < 3; j++) {
+        //     var cell = document.createElement("td");
+        //     var cellText = document.createTextNode(array[i][j]);
+        //     cell.appendChild(cellText);
+        //     row.appendChild(cell);
+        // }
         table.appendChild(row);
     }
 }
