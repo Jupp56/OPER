@@ -13,7 +13,7 @@ $stmt = $mysqli->prepare('SELECT * FROM Users AS JSON');
 $users = array();
 
 if ($stmt->execute()){
-    while ($row = $stmt->fetch_array($res, MYSQL_ASSOC)){
+    while ($row = $stmt->fetch_assoc()){
         $users->push($row);
     }
     echo json_encode($users);
