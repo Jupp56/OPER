@@ -12,13 +12,8 @@ $stmt = $mysqli->query('SELECT * FROM Users');
 
 $users = array();
 
-if ($stmt->execute()){
-    while ($row = $stmt->fetch_assoc()){
-        $users[] = $row;
-    }
-    echo json_encode($users);
-} else {
-    header("HTTP/1.1 500 Internal Server Error");
-    echo $stmt->error;
+while ($row = $stmt->fetch_assoc()){
+    $users[] = $row;
 }
+echo json_encode($users);
 ?>
