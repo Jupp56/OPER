@@ -10,13 +10,13 @@ function getusers() {
     var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
     var xmlHttp = new XMLHttpRequest();
     var getusersurl = baseurl+"/getusers.php";
-    alert(getusersurl);
+
     xmlHttp.open("GET", getusersurl, true); //true for asynchronous request
 
     xmlHttp.onload = function (e) {
         if (xmlHttp.status === 200) {
             var result = xmlHttp.responseText;
-            alert(xmlHttp.responseText);
+            console.log(xmlHttp.responseText);
             var dataset = JSON.parse(result);
             fillarr(dataset);
         }
