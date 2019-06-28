@@ -47,8 +47,8 @@ function createtd(tdvalue) {
     return cell;
 }
 
-function getdetails() {
-    console.log("details");
+function getdetails(username) {
+    alert(username);
 }
 
 window.onload = getusers;
