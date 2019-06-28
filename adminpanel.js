@@ -29,10 +29,7 @@ function fillarr(array) {
         var row = document.createElement("tr");
         var createClickHandler =
             function (row) {
-                return function () {
-                    var cell = row.getElementsByTagName("td")[0];
-                    var id = cell.innerHTML;
-                    alert("id:" + id);
+                return getdetails(array[i].Username);
                 };
             };
         row.onclick = createClickHandler(row);
