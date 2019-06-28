@@ -30,7 +30,6 @@ function fillarr(array) {
         var createClickHandler =
             function (row) {
                 return getdetails(array[i].Username);
-                };
             };
         row.onclick = createClickHandler(row);
         row.appendChild(createtd(array[i].Username));
