@@ -27,7 +27,7 @@ function fillarr(array) {
 
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
-
+        row.onclick="getdetails(" + array[i].Username + ")";
         row.appendChild(createtd(array[i].Username));
         row.appendChild(createtd(array[i].Mail));
         row.appendChild(createtd(array[i].Salt));
@@ -41,6 +41,10 @@ function createtd(tdvalue) {
     var cellText = document.createTextNode(tdvalue);
     cell.appendChild(cellText);
     return cell;
+}
+
+function getdetails(){
+    console.log("details");
 }
 
 window.onload = getusers;
