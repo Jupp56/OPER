@@ -34,7 +34,7 @@ function fillarr(array) {
                     var cell = row.getElementsByTagName("td")[0];
                     var id = cell.innerHTML;
                     document.getElementById("overlaystuff").style.width = "100%";
-                    document.getElementById("Name-Single").setAttribute('value', Username);
+                    document.getElementById("Name-Single").setAttribute('value', Username.toString());
                     document.getElementById("Mail-Single").setAttribute('value', array[i].Mail);
                     //Zu bearbeitende Daten holen und anzeigen
                 };
