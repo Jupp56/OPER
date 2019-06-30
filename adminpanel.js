@@ -32,6 +32,8 @@ function fillarr(array) {
                     var cell = row.getElementsByTagName("td")[0];
                     var id = cell.innerHTML;
                     alert("id:" + id);
+                    document.getElementById("overlaystuff").style.width = "100%";
+                    document.getElementById("Name-Single").innerText = id;
                     //Zu bearbeitende Daten holen und anzeigen
                 };
             };
@@ -57,12 +59,12 @@ function getdetails() {
 
 /* Open when someone clicks on the span element */
 function showoverlay() {
-    document.getElementById("myNav").style.width = "100%";
+    document.getElementById("overlaystuff").style.width = "100%";
 }
 
 /* Close when someone clicks on the "x" symbol inside the overlay */
 function closeoverlay() {
-    document.getElementById("myNav").style.width = "0%";
+    document.getElementById("overlaystuff").style.width = "0%";
 }
 
 window.onload = getusers;

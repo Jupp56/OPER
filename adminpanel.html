@@ -38,10 +38,9 @@
     </div>
     <button onclick="showoverlay();">Show overlay</button>
 
-    <div id="myNav" class="overlay">
+    <div id="overlaystuff" class="overlay">
         <button onclick="closeoverlay()" class="overlaybutton">&times;</button>
 
-        <!-- Overlay content -->
         <div class="overlay-content">
             <div class="row">
                 <div class="col">
@@ -50,15 +49,27 @@
             </div>
             <div class="row mt-2">
                 <div class="col">
-                    <div class="ml-2 float-left">Name:</div>
+                    <div class=" float-left">Name:</div>
                 </div>
-                <div class="col"><input id="Name-Single" class="mr-2 float-right" type="text"></div>
+                <div class="col"><input id="Name-Single" class="float-right" type="text"></div>
             </div>
             <div class="row mt-2">
                 <div class="col">
-                    <div class="ml-2 float-left">Mail:</div>
+                    <div class=" float-left">Mail:</div>
                 </div>
-                <div class="col"><input id="Mail-Single" class="mr-2 float-right" type="text"></div>
+                <div class="col"><input id="Mail-Single" class="float-right" type="text"></div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <button class="float-left button-alt" type="submit" onclick="closeoverlay();">
+                        abbrechen
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="float-right" onclick="closeoverlay()">
+                        Ändern
+                    </button>
+                </div>
             </div>
 
         </div>

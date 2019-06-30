@@ -10,9 +10,14 @@
 
 button {
     background-color: rgb(0, 93, 216);
-    border-radius: 2px;
-    border: none;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 93, 216);
     color: white;
+}
+
+.button-alt {
+    background-color: white;
+    color: rgb(0, 93, 216);
 }
 
 input {
