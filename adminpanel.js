@@ -1,3 +1,5 @@
+var currentuser;
+
 function getusers() {
 
     var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
@@ -32,6 +34,7 @@ function fillarr(array) {
                     var cells = row.getElementsByTagName("td");
                     var thisusername = cells[0].innerHTML;
                     var thismail = cells[1].innerHTML;
+                    currentuser = thisusername;
                     document.getElementById("overlaystuff").style.width = "100%";
                     document.getElementById("Name-Single").setAttribute('value', thisusername);
                     document.getElementById("Mail-Single").setAttribute('value', thismail);

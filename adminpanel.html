@@ -36,44 +36,42 @@
 
         </div>
     </div>
-    <button onclick="showoverlay();">Show overlay</button>
 
     <div id="overlaystuff" class="overlay">
-        <button onclick="closeoverlay()" class="overlaybutton">&times;</button>
+        <form action="updateuser.php" method="post">
+            <div class="overlay-content">
+                <div class="row">
+                    <div class="col">
+                        <h2>Details</h2>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class=" float-left">Name:</div>
+                    </div>
+                    <div class="col"><input id="Name-Single" class="float-right" type="text" name="Username"></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class=" float-left">Mail:</div>
+                    </div>
+                    <div class="col"><input id="Mail-Single" class="float-right" type="text" name="E-Mail"></div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <button class="float-left button-alt" onclick="closeoverlay();">
+                            abbrechen
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="float-right" type="submit" onclick="closeoverlay()">
+                            Ändern
+                        </button>
+                    </div>
+                </div>
 
-        <div class="overlay-content">
-            <div class="row">
-                <div class="col">
-                    <h2>Details</h2>
-                </div>
             </div>
-            <div class="row mt-2">
-                <div class="col">
-                    <div class=" float-left">Name:</div>
-                </div>
-                <div class="col"><input id="Name-Single" class="float-right" type="text"></div>
-            </div>
-            <div class="row mt-2">
-                <div class="col">
-                    <div class=" float-left">Mail:</div>
-                </div>
-                <div class="col"><input id="Mail-Single" class="float-right" type="text"></div>
-            </div>
-            <div class="row mt-4">
-                <div class="col">
-                    <button class="float-left button-alt" type="submit" onclick="closeoverlay();">
-                        abbrechen
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="float-right" onclick="closeoverlay()">
-                        Ändern
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
+        </form>
     </div>
 
 </body>
