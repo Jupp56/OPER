@@ -27,7 +27,7 @@ function fillarr(array) {
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
         var createClickHandler =
-            function(array, i) {
+            function() {
                 return function() {
                     var cell = row.getElementsByTagName("td")[0];
                     var id = cell.innerHTML;
