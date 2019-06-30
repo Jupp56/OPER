@@ -26,12 +26,12 @@ function fillarr(array) {
 
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
-        console.log(array.toString());
+        alert(array.toString());
         var createClickHandler =
             function(array) {
                 return function() {
-                    console.log(row.toString());
-                    console.log(array.toString());
+                    alert(row.toString());
+                    alert(array.toString());
                     var cell = row.getElementsByTagName("td")[0];
                     var id = cell.innerHTML;
                     document.getElementById("overlaystuff").style.width = "100%";
