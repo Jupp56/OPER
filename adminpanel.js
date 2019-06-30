@@ -26,20 +26,22 @@ function fillarr(array) {
 
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
+        var Username = array[i].Username;
+        var Mail = array[i].Mail;
         var createClickHandler =
-            function() {
+            function(Username, Mail) {
                 return function() {
                     var cell = row.getElementsByTagName("td")[0];
                     var id = cell.innerHTML;
                     document.getElementById("overlaystuff").style.width = "100%";
-                    document.getElementById("Name-Single").setAttribute('value', array[i].Username);
+                    document.getElementById("Name-Single").setAttribute('value', Username);
                     document.getElementById("Mail-Single").setAttribute('value', array[i].Mail);
                     //Zu bearbeitende Daten holen und anzeigen
                 };
             };
         row.onclick = createClickHandler(row);
-        row.appendChild(createtd(array[i].Username));
-        row.appendChild(createtd(array[i].Mail));
+        row.appendChild(createtd(Username));
+        row.appendChild(createtd(Mail));
         row.appendChild(createtd(array[i].Salt));
 
         table.appendChild(row);
