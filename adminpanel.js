@@ -29,7 +29,7 @@ function fillarr(array) {
         var Username = array[i].Username;
         var Mail = array[i].Mail;
         var createClickHandler =
-            function(Username, Mail) {
+            function(Mail) {
                 return function() {
                     var cell = row.getElementsByTagName("td")[0];
                     var id = cell.innerHTML;
