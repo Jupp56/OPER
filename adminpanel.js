@@ -29,11 +29,13 @@ function fillarr(array) {
         var createClickHandler =
             function(row, array) {
                 return function() {
+                    console.log(row.toString());
+                    console.log(array.toString());
                     var cell = row.getElementsByTagName("td")[0];
                     var id = cell.innerHTML;
                     document.getElementById("overlaystuff").style.width = "100%";
                     document.getElementById("Name-Single").setAttribute('value', array[i].Username);
-                    document.getElementById("Mail-Single").setAttribute('value', array[i].Username);
+                    document.getElementById("Mail-Single").setAttribute('value', array[i].Mail);
                     //Zu bearbeitende Daten holen und anzeigen
                 };
             };
