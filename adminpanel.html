@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>OPER-Admin Panel</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="adminpanel.css">
     <script lang="javascript" type="text/javascript" src="adminpanel.js"></script>
 
 </head>
@@ -36,11 +36,40 @@
 
         </div>
     </div>
+    <button onclick="showoverlay();">Show overlay</button>
+
+    <div id="myNav" class="overlay">
+        <button onclick="closeoverlay()" class="overlaybutton">&times;</button>
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <div class="row">
+                <div class="col">
+                    <h2>Details</h2>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <div class="ml-2 float-left">Name:</div>
+                </div>
+                <div class="col"><input id="Name-Single" class="mr-2 float-right" type="text"></div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <div class="ml-2 float-left">Mail:</div>
+                </div>
+                <div class="col"><input id="Mail-Single" class="mr-2 float-right" type="text"></div>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 
 <footer>
-    <!-- <link rel="import" href="footer.html">-->
-    <iframe sandbox="allow-top-navigation allow-scripts allow-forms" class="footer" src="footer.html"></iframe>
+    <!-- <link rel="import " href="footer.html ">-->
+    <iframe sandbox="allow-top-navigation allow-scripts allow-forms " class="footer " src="footer.html "></iframe>
 </footer>
 
 </html>

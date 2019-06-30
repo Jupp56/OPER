@@ -6,14 +6,13 @@ function getusers() {
 
     xmlHttp.open("GET", getusersurl, true); //true for asynchronous request
 
-    xmlHttp.onload = function (e) {
+    xmlHttp.onload = function(e) {
         if (xmlHttp.status === 200) {
             var result = xmlHttp.responseText;
             console.log(xmlHttp.responseText);
             var dataset = JSON.parse(result);
             fillarr(dataset);
-        }
-        else {
+        } else {
             console.log(xmlHttp.statusText);
         }
     }
@@ -28,8 +27,13 @@ function fillarr(array) {
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
         var createClickHandler =
-            function (row) {
-                return getdetails(array[i].Username);
+            function(row) {
+                return function() {
+                    var cell = row.getElementsByTagName("td")[0];
+                    var id = cell.innerHTML;
+                    alert("id:" + id);
+                    //Zu bearbeitende Daten holen und anzeigen
+                };
             };
         row.onclick = createClickHandler(row);
         row.appendChild(createtd(array[i].Username));
@@ -47,8 +51,18 @@ function createtd(tdvalue) {
     return cell;
 }
 
-function getdetails(username) {
-    alert(username);
+function getdetails() {
+    console.log("details");
+}
+
+/* Open when someone clicks on the span element */
+function showoverlay() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeoverlay() {
+    document.getElementById("myNav").style.width = "0%";
 }
 
 window.onload = getusers;
