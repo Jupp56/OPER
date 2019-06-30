@@ -33,7 +33,7 @@ function fillarr(array) {
                     var id = cell.innerHTML;
                     alert("id:" + id);
                     document.getElementById("overlaystuff").style.width = "100%";
-                    document.getElementById("Name-Single").value = id;
+                    document.getElementById("Name-Single").setAttribute('value', id);
                     //Zu bearbeitende Daten holen und anzeigen
                 };
             };
