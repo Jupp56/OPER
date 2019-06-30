@@ -37,3 +37,9 @@ input {
 .footer-general {
     background-color: #f5f5f5;
 }
+
+.loadingspinner {
+    height: 20px;
+    width: 20px;
+    background: white;
+}
