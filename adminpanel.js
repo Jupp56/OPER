@@ -26,8 +26,9 @@ function fillarr(array) {
 
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
+        console.log(array.toString());
         var createClickHandler =
-            function(row, array) {
+            function(array) {
                 return function() {
                     console.log(row.toString());
                     console.log(array.toString());
