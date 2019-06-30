@@ -31,9 +31,9 @@ function fillarr(array) {
                 return function() {
                     var cell = row.getElementsByTagName("td")[0];
                     var id = cell.innerHTML;
-                    alert("id:" + id);
                     document.getElementById("overlaystuff").style.width = "100%";
-                    document.getElementById("Name-Single").setAttribute('value', id);
+                    document.getElementById("Name-Single").setAttribute('value', array[i].Username);
+                    document.getElementById("Mail-Single").setAttribute('value', array[i].Username);
                     //Zu bearbeitende Daten holen und anzeigen
                 };
             };
