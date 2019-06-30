@@ -26,23 +26,21 @@ function fillarr(array) {
 
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
-        var Username = array[i].Username;
-        var Mail = array[i].Mail;
         var createClickHandler =
-            function(Mail) {
+            function(row) {
                 return function() {
-                    var cell = row.getElementsByTagName("td")[0];
-                    var id = cell.innerHTML;
-                    var thisusername = Username;
+                    var cells = row.getElementsByTagName("td");
+                    var thisusername = cells[0].innerHTML;
+                    var thismail = cells[1].innerHTML;
                     document.getElementById("overlaystuff").style.width = "100%";
                     document.getElementById("Name-Single").setAttribute('value', thisusername);
-                    document.getElementById("Mail-Single").setAttribute('value', array[i].Mail);
+                    document.getElementById("Mail-Single").setAttribute('value', thismail);
                     //Zu bearbeitende Daten holen und anzeigen
                 };
             };
         row.onclick = createClickHandler(row);
-        row.appendChild(createtd(Username));
-        row.appendChild(createtd(Mail));
+        row.appendChild(createtd(array[i].Username));
+        row.appendChild(createtd(array[i].Mail));
         row.appendChild(createtd(array[i].Salt));
 
         table.appendChild(row);
