@@ -26,12 +26,9 @@ function fillarr(array) {
 
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
-        alert(array.toString());
         var createClickHandler =
-            function(array) {
+            function(array, i) {
                 return function() {
-                    alert(row.toString());
-                    alert(array.toString());
                     var cell = row.getElementsByTagName("td")[0];
                     var id = cell.innerHTML;
                     document.getElementById("overlaystuff").style.width = "100%";
