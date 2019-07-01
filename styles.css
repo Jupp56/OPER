@@ -43,3 +43,7 @@ footer {
     width: 20px;
     background: white;
 }
+
+#usertable :hover {
+    background-color: black;
+}
