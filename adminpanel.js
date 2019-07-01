@@ -24,8 +24,8 @@ function getusers() {
 
 function fillarr(array) {
 
-    var table = document.getElementById("usertable");
-    table.deleteRow(1);
+    var tablebody = document.getElementById("usertablebody");
+    tablebody.deleteRow(1);
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
         var createClickHandler =
@@ -46,7 +46,7 @@ function fillarr(array) {
         row.appendChild(createtd(array[i].Mail));
         row.appendChild(createtd(array[i].Salt));
 
-        table.appendChild(row);
+        tablebody.appendChild(row);
     }
 }
 
