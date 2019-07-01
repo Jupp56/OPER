@@ -87,6 +87,13 @@
         </div>
     </div>
 
+    Todo: <ul><li>Sanity checking/was passiert, wenns nicht klappt mit dem hinzufügen?</li>
+    <li>Doppeltes hinzufügen vermeiden? Server- und Clientseitig? Oder reicht da der Client?</li>
+    <li>Submit, ohne auf andere Website umzuleiten?</li>
+    <li>Immer noch aktuell: wie überprüfen wir auf Berechtigung?</li>
+    <li>Welcher User darf welche Kurse sehen und mit welchen Kursen interagieren? "Einladung" anderer Prüfer?</li>
+</ul>
+
     <?php
     include 'footer.php';
     ?>
