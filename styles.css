@@ -43,7 +43,3 @@ footer {
     width: 20px;
     background: white;
 }
-
-tr :hover {
-    background-color: black;
-}

@@ -45,6 +45,7 @@
      }
  }
  
- table {
+ tr {
      cursor: pointer !important;
+     background-color: black;
  }
