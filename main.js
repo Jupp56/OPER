@@ -3,6 +3,7 @@ var username = "testuser"; //TODO: load dynamically
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 function getcourses() {
+    fillarr(new array);
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getcourses.php?user=" + username;
 
