@@ -41,10 +41,6 @@
             </div>
         </div>
     </div>
-</body>
-
-<footer>
-    <iframe sandbox="allow-top-navigation allow-scripts allow-forms" class="footer" src="footer.html"></iframe>
-</footer>
-
-</html>
+<?php
+    include 'footer.php';
+?>

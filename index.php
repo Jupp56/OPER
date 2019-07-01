@@ -80,12 +80,7 @@
             </div>
         </div>
     </form>
-</body>
-
-<footer>
-    <link rel="import" href="testtemplate.html">
-    <zusatz></zusatz>
-    <!-- <iframe sandbox="allow-top-navigation allow-scripts allow-forms" class="footer" src="footer.html"></iframe>-->
-</footer>
-
-</html>
+     
+<?php
+    include 'footer.php';
+?>
