@@ -71,17 +71,17 @@ function closeoverlay() {
 }
 
 function deleteaccount() {
-    document.getElementById("deletewindow").style.height = "100%";
+    document.getElementById("deletewindow").style.width = "100%";
 }
 
 function deleteaccountconfirm() {
     var url = baseurl + "/deleteuser.php?" + currentaccount;
     alert(sendgetrequest(url).toString());
-    document.getElementById("deletewindow").style.height = "0%";
+    document.getElementById("deletewindow").style.width = "0%";
 }
 
 function deleteaccountdeny() {
-    document.getElementById("deletewindow").style.height = "0%";
+    document.getElementById("deletewindow").style.width = "0%";
 }
 
 function sendgetrequest(url) {
