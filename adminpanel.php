@@ -13,13 +13,14 @@
 
 <body>
     <div id="userdata">
-        <div class="row ">
+        <div class="row">
             <div class="col-auto myborder">
                 Benutzer: Nutzername<br>
                 <button class="mt-1 float-right">Abmelden</button>
             </div>
         </div>
     </div>
+
     <div class="container-fluid mt-5">
         <div class="row flex-xl-nowrap ml-5 mr-5">
             <main class="col-12" role="main">
@@ -69,6 +70,11 @@
                         </button>
                     </div>
                     <div class="col">
+                        <button class="button-warn" type="button" onclick="deleteaccount()">
+                            Löschen
+                        </button>
+                    </div>
+                    <div class="col">
                         <button class="float-right" type="submit" onclick="closeoverlay()">
                             Ändern
                         </button>
@@ -79,6 +85,26 @@
         </form>
     </div>
 
-<?php
-include 'footer.php';
-?>
+    <div id="deletewindow" class="overlay">
+        <div class="overlay-content">
+            <div class="row">
+                <div class="col">Diesen Account wirklich löschen?</div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <button class="float-left button-alt" type="button" onclick="deleteaccountdeny();">
+                        Abbrechen
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="float-right button-warn" type="button" onclick="deleteaccountconfirm()">
+                        Löschen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
+    include 'footer.php';
+    ?>

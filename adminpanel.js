@@ -1,8 +1,8 @@
-var currentuser;
+var currentaccount;
+var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 function getusers() {
 
-    var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
     var xmlHttp = new XMLHttpRequest();
     var getusersurl = baseurl + "/getusers.php";
 
@@ -62,14 +62,37 @@ function getdetails() {
     console.log("details");
 }
 
-/* Open when someone clicks on the span element */
 function showoverlay() {
     document.getElementById("overlaystuff").style.width = "100%";
 }
 
-/* Close when someone clicks on the "x" symbol inside the overlay */
 function closeoverlay() {
     document.getElementById("overlaystuff").style.width = "0%";
+}
+
+function deleteaccount() {
+    document.getElementById("deletewindow").style.height = "100%";
+}
+
+function deleteaccountconfirm() {
+    var url = baseurl + "/deleteuser.php?" + currentaccount;
+    alert(sendgetrequest(url).toString());
+    document.getElementById("deletewindow").style.height = "0%";
+}
+
+function deleteaccountdeny() {
+    document.getElementById("deletewindow").style.height = "0%";
+}
+
+function sendgetrequest(url) {
+    var xmlHttp = new XMLHttpRequest();
+
+    xmlHttp.open("GET", url, false); //true for asynchronous request
+
+
+    xmlHttp.send(null);
+
+    return xmlHttp.status;
 }
 
 window.onload = getusers;
