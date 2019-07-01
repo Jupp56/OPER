@@ -24,7 +24,7 @@ function getusers() {
 
 function fillarr(array) {
 
-    var tablebody = document.getElementById("usertablebody");
+    var tablebody = document.getElementById("tablebody");
     tablebody.deleteRow(1);
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
