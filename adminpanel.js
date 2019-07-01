@@ -36,7 +36,7 @@ function fillarr(array) {
                     var thisusername = cells[0].innerHTML;
                     var thismail = cells[1].innerHTML;
                     currentuser = thisusername;
-                    document.getElementById("overlaystuff").style.width = "100%";
+                    showsingleaccount();
                     document.getElementById("Name-Single").setAttribute('value', thisusername);
                     document.getElementById("Mail-Single").setAttribute('value', thismail);
                     currentaccount = thisusername;
@@ -63,12 +63,20 @@ function getdetails() {
     console.log("details");
 }
 
-function showoverlay() {
-    document.getElementById("overlaystuff").style.width = "100%";
+function showsingleaccount() {
+    document.getElementById("singleaccount").style.width = "100%";
 }
 
-function closeoverlay() {
-    document.getElementById("overlaystuff").style.width = "0%";
+function hidesingleaccount() {
+    document.getElementById("singleaccount").style.width = "0%";
+}
+
+function showcreateaccount() {
+    document.getElementById("createaccountwindow").style.width = "100%";
+}
+
+function hidecreateaccount() {
+    document.getElementById("createaccountwindow").style.width = "0%";
 }
 
 function deleteaccount() {
