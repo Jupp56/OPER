@@ -37,8 +37,8 @@ function fillarr(array) {
                     var thismail = cells[1].innerHTML;
                     currentuser = thisusername;
                     showsingleaccount();
-                    document.getElementById("Name-Single").setAttribute('value', thisusername);
-                    document.getElementById("Mail-Single").setAttribute('value', thismail);
+                    document.getElementById("Name-Single").value = thisusername;
+                    document.getElementById("Mail-Single").value = thismail;
                     currentaccount = thisusername;
                     //Zu bearbeitende Daten holen und anzeigen
                 };
@@ -73,6 +73,7 @@ function hidesingleaccount() {
 
 function showcreateaccount() {
     document.getElementById("createaccountwindow").style.width = "100%";
+    document.getElementById("Password-Single").value = Math.random().toString(36).slice(-8);
 }
 
 function hidecreateaccount() {
