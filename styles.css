@@ -44,6 +44,6 @@ footer {
     background: white;
 }
 
-#usertable :hover {
+tr :hover {
     background-color: black;
 }
