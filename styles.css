@@ -78,7 +78,7 @@ footer {
     text-align: center;
     background: white;
     border-radius: 5px;
-    overflow-x: none;
+    overflow-x: hidden;
     box-shadow: 10px 10px 100px grey;
 }
 
