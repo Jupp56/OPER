@@ -3,6 +3,7 @@ var username = "testuser"; //TODO: load dynamically
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 function getcourses() {
+    fillarr(null) //testin!!!
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getcourses.php?user=" + username;
 
@@ -22,8 +23,8 @@ function getcourses() {
 }
 
 function fillarr(array) {
-    alert("test");
-    array[0] = ["Course" = "cours1", "Participants" = 5];
+    var array = new Array({ Course: "cours1", Participants: 5 });
+
     var table = document.getElementById("usertable");
     table.deleteRow(1);
     var tablebody = document.getElementById("tablebody");
@@ -32,7 +33,7 @@ function fillarr(array) {
         var createClickHandler =
             function(array, i) {
                 return function() {
-                    window.location.href = baseurl + '/course?course=' + array[i].Course;
+                    window.location.href = baseurl + '/course.php?course=' + array[i].Course;
                     //What happens, when you click on a row
                 };
             };
@@ -42,4 +43,11 @@ function fillarr(array) {
 
         tablebody.appendChild(row);
     }
+}
+
+function createtd(tdvalue) {
+    var cell = document.createElement("td");
+    var cellText = document.createTextNode(tdvalue);
+    cell.appendChild(cellText);
+    return cell;
 }

@@ -20,6 +20,10 @@
         </div>
     </div>
 
+    <div id="backbutton" class="row ml-5 mt-5">
+        <div class="col"><button class="float-left" onclick="back()">Zurück</button></div>
+    </div>
+
     <div id="accountlist" class="container-fluid mt-5">
 
         <div class="row flex-xl-nowrap ml-5 mt-2 mr-5">
@@ -27,8 +31,8 @@
                 <div class="table-responsive">
                     <table id="usertable" class="table table-striped table-hover">
                         <thead>
-                            <th>Kurs</th>
-                            <th>Teilnehmerzahl</th>
+                            <th>Name</th>
+                            <th>Note</th>
                         </thead>
                         <tbody id="tablebody">
                             <tr>

@@ -23,7 +23,7 @@
     <div id="addaccount" class="row ml-5 mr-5">
         <div class="col"><button class="float-right" onclick="showcreateaccount()">Neuer Account</button></div>
     </div>
-
+    
     <div id="accountlist" class="container-fluid mt-5">
 
         <div class="row flex-xl-nowrap ml-5 mt-2 mr-5">
