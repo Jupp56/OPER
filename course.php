@@ -20,8 +20,8 @@
         </div>
     </div>
 
-    <div id="backbutton" class="row ml-5 mt-5">
-        <div class="col"><button class="float-left" onclick="back()">Zurück</button></div>
+    <div id="buttons" class="row ml-5 mt-5">
+        <div class="col"><button class="float-left" onclick="back()">Zurück</button><button class="ml-2 float-left" onclick="save()">Sichern</button></div>
     </div>
 
     <div id="accountlist" class="container-fluid mt-5">

@@ -1,12 +1,12 @@
 window.onload = getdata;
 var username = "testuser"; //TODO: load dynamically
-var coursename = "<?php Print($course); ?>";
+var coursename = window.location.href.split('=')[1]; //TODO: schöner!!!
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 var unsaved = false;
 
 function getdata() {
     fillarr(null);
-    alert(coursename);
+
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getcoursedata.php?course=" + coursename;
 
@@ -76,6 +76,7 @@ function createbutton(text, buttonclass, Participant) {
 }
 
 function deleteaccountgrade(varr) {
+    unsaved = true;
     alert(varr);
 }
 
@@ -83,6 +84,14 @@ function changeoccured() {
     unsaved = true;
 }
 
+function save() {
+    unsaved = false;
+    //TODO: Read list and send to server - wait for confirmation, else alert user that data is unsaved
+}
+
 function back() {
+    if (unsaved = true) {
+        save();
+    }
     window.location.href = baseurl + '/main.php';
 }
