@@ -33,13 +33,21 @@ function fillarr(array) {
     var tablebody = document.getElementById("tablebody");
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
-
+        row.appendChild(createth(i + 1));
         row.appendChild(createtd(array[i].Participant));
         row.appendChild(createinput(array[i].Grade));
         row.appendChild(createbutton("Entfernen", "button-warn", array[i].Participant));
 
         tablebody.appendChild(row);
     }
+}
+
+function createth(thvalue) {
+    var cell = document.createElement("th");
+    cell.scope = "row";
+    var celltext = document.createTextNode(thvalue);
+    cell.appendChild(celltext);
+    return cell;
 }
 
 function createtd(tdvalue) {
@@ -80,6 +88,61 @@ function deleteaccountgrade(varr) {
     alert(varr);
 }
 
+function addparticipant() {
+    hideaddparticipant();
+}
+
+function showaddparticipant() {
+    document.getElementById("addparticipantoverlay").style.width = "100%";
+}
+
+function hideaddparticipant() {
+    document.getElementById("addparticipantoverlay").style.width = "0%";
+}
+
+function search() {
+    var table = document.getElementById("searchresulttable");
+
+    cleartable(table);
+
+    var resultfield = document.getElementById("searchresults");
+    var searchterm = document.getElementById("participantsearchbox").value;
+    // try {
+    //     var allusers = JSON.parse(sendgetrequest(baseurl + '/getallusers.php'));
+    // } catch (e) {
+    //     return;
+    // }
+    //test data
+    var allusers = new Array(
+        "Martin Fowler",
+        "Max Mustermann",
+        "Paul Lambert",
+        "Jeff Davis",
+        "Dagobert Duck",
+        "Daniel Davis"
+    )
+    var searchexpression = new RegExp(searchterm, "gi");
+
+    allusers.forEach(participant => {
+        if (participant.match(searchexpression)) {
+            var row = document.createElement("tr");
+            row.appendChild(createtd(participant));
+            row.onclick = function() {
+                document.getElementById("participantsearchbox").value = participant;
+                cleartable(resultfield);
+            }
+            resultfield.appendChild(row);
+        }
+
+    });
+}
+
+function cleartable(table) {
+    for (var i = table.rows.length - 1; i >= 0; i--) {
+        table.deleteRow(i);
+    }
+}
+
 function changeoccured() {
     unsaved = true;
 }
@@ -87,6 +150,13 @@ function changeoccured() {
 function save() {
     unsaved = false;
     //TODO: Read list and send to server - wait for confirmation, else alert user that data is unsaved
+}
+
+function sendgetrequest(url) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", url, false); //true for asynchronous request
+    xmlHttp.send(null);
+    return xmlHttp.responseText;
 }
 
 function back() {

@@ -91,3 +91,13 @@ footer {
 tbody tr {
     cursor: pointer !important;
 }
+
+.searchresults {
+    z-index: 1;
+    position: fixed;
+    background-color: white;
+    border-color: lightgrey;
+    border-width: 1px;
+    border-style: solid;
+    width: auto;
+}
