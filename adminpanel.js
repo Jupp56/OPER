@@ -39,6 +39,7 @@ function fillarr(array) {
                     document.getElementById("overlaystuff").style.width = "100%";
                     document.getElementById("Name-Single").setAttribute('value', thisusername);
                     document.getElementById("Mail-Single").setAttribute('value', thismail);
+                    currentaccount = thisusername;
                     //Zu bearbeitende Daten holen und anzeigen
                 };
             };
