@@ -79,11 +79,11 @@
         </form>
     </div>
 
+<?php
+include 'footer.php';
+?>
+
 </body>
 
-<footer>
-    <!-- <link rel="import " href="footer.html ">-->
-    <iframe sandbox="allow-top-navigation allow-scripts allow-forms " class="footer " src="footer.html "></iframe>
-</footer>
 
 </html>
