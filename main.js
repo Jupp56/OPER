@@ -22,7 +22,7 @@ function getcourses() {
 }
 
 function fillarr(array) {
-
+    array[0] = ["Course" = "cours1", "Participants" = 5];
     var table = document.getElementById("usertable");
     table.deleteRow(1);
     var tablebody = document.getElementById("tablebody");
