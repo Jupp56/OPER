@@ -1,10 +1,11 @@
-window.onload = getcourses;
+window.onload = getdata;
 var username = "testuser"; //TODO: load dynamically
+var coursename = "testcourse1";
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
-function getcourses() {
+function getdata() {
     var xmlHttp = new XMLHttpRequest();
-    var url = baseurl + "/getcourses.php?user=" + username;
+    var url = baseurl + "/getcoursedata.php?course=" + coursename;
 
     xmlHttp.open("GET", url, true); //true for asynchronous request
 
