@@ -48,7 +48,3 @@
  tr {
      cursor: pointer !important;
  }
- 
- tr :hover {
-     background-color: black;
- }

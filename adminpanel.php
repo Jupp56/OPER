@@ -24,7 +24,7 @@
         <div class="row flex-xl-nowrap ml-5 mr-5">
             <main class="col-12" role="main">
                 <div class="table-responsive">
-                    <table id="usertable" class="table table-hover">
+                    <table id="usertable" class="table table-striped table-hover">
                         <thead>
                             <th>Name</th>
                             <th>Mailadresse</th>
