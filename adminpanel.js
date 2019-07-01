@@ -76,7 +76,7 @@ function deleteaccount() {
 }
 
 function deleteaccountconfirm() {
-    var url = baseurl + "/deleteuser.php?" + currentaccount;
+    var url = baseurl + "/deleteuser.php?user=" + currentaccount;
     alert(sendgetrequest(url).toString());
     document.getElementById("deletewindow").style.width = "0%";
 }
