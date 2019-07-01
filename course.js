@@ -97,6 +97,7 @@ function showaddparticipant() {
 }
 
 function hideaddparticipant() {
+    cleartable(document.getElementById("searchresulttable"));
     document.getElementById("addparticipantoverlay").style.width = "0%";
 }
 
