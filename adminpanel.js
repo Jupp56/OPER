@@ -83,7 +83,7 @@ function hidesingleaccount() {
 
 function showcreateaccount() {
     document.getElementById("createaccountwindow").style.width = "100%";
-    document.getElementById("Password-Single").value = Math.random().toString(36).slice(-8);
+    document.getElementById("Password-Create").value = Math.random().toString(36).slice(-8);
 }
 
 function hidecreateaccount() {
