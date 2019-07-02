@@ -77,10 +77,10 @@
                     </div>
                     <div class="col"><input id="DateOfBirth-Single" class="float-right" type="date" value="2000-01-01" name="DateOfBirth"></div>
                 </div>
-                <div class="col">
-                    <div class=" float-left">Benutzername:</div>
-                </div>
                 <div class="row mt-2">
+                    <div class="col">
+                        <div class="float-left">Benutzername:</div>
+                    </div>
                     <div class="col"><input id="Username-Single" class="float-right" type="text" name="Username"></div>
                 </div>
                 <div class="row mt-2">
