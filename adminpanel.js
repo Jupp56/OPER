@@ -8,13 +8,13 @@ function getusers() {
 
     xmlHttp.open("GET", getusersurl, true); //true for asynchronous request
 
-    xmlHttp.onload = function(e) {
+    xmlHttp.onload = function (e) {
         if (xmlHttp.status === 200) {
             var result = xmlHttp.responseText;
-            try{
-            var dataset = JSON.parse(result);
+            try {
+                var dataset = JSON.parse(result);
             }
-            catch(e) {
+            catch (e) {
                 return;
             }
             fillarr(dataset);
@@ -33,15 +33,15 @@ function fillarr(array) {
     var tablebody = document.getElementById("tablebody");
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
-        
+
         var createClickHandler =
-            function(dataset) {
-                return function() {
+            function (dataset) {
+                return function () {
                     showsingleaccount();
 
                     document.getElementById("FirstName-Single").value = dataset.FirstName;
                     document.getElementById("LastName-Single").value = dataset.LastName;
-                    document.getElementById("DateOfBirth-Single").value=dataset.DateOfBirth;
+                    document.getElementById("DateOfBirth-Single").value = dataset.DateOfBirth;
                     document.getElementById("Username-Single").value = dataset.Username;
                     document.getElementById("Mail-Single").value = dataset.Mail;
                     currentaccount = thisusername;
@@ -51,7 +51,7 @@ function fillarr(array) {
 
         row.onclick = createClickHandler(array[i]);
 
-        row.appendChild(createtd(i));
+        row.appendChild(createtd(i + 1));
         row.appendChild(createtd(array[i].FirstName));
         row.appendChild(createtd(array[i].LastName));
         row.appendChild(createtd(array[i].Username));
