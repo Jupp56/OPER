@@ -14,7 +14,7 @@ if (!$_COOKIE['user']){
     exit();
 }
 
-$stmt = $mysqli->prepare('SELECT Token FROM Users WHERE Username=?');
+$stmt = $mysqli->prepare('SELECT Token FROM Users WHERE BINARY Username=?');
 $stmt->bind_param("s", $username);
 $username = $_COOKIE['user'];
 $stmt->bind_result($token);
