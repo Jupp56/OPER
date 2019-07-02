@@ -12,11 +12,11 @@ $stmt = $mysqli->prepare('SELECT Username FROM Users WHERE Username LIKE BINARY 
 
 $stmt->bind_param("s", $username);
 $username = $_POST['Username'];
+$stmt->bind_result($resusername);
 
 if ($stmt->execute()){
-    $stmt->store_result();
-    if ($stmt->fetch() && $stmt->num_rows > 0){
-        echo "Username taken";
+    if ($stmt->fetch()){
+        echo "Username taken: ".$resusername;
         exit();
     }
     else {
