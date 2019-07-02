@@ -39,7 +39,7 @@ function fillarr(array) {
         row.appendChild(createtd(array[i].DateOfBirth));
         row.appendChild(createtd(array[i].ID));
         row.appendChild(createinput(array[i].Grade));
-        row.appendChild(createbutton("X", "button-warn", array[i].Participant));
+        row.appendChild(createbutton("X", "button-warn", array[i].ID));
 
         tablebody.appendChild(row);
     }
@@ -88,7 +88,6 @@ function createbutton(text, buttonclass, Participant) {
 
 function deleteaccountgrade(varr) {
     unsaved = true;
-    alert(varr);
 }
 
 function addparticipant() {
