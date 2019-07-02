@@ -14,9 +14,14 @@ $stmt->bind_param("s", $username);
 $username = $_POST['Username'];
 $stmt->bind_result($resusername);
 
+if ($username == null || $username == ''){
+    http_response_code(400);
+    exit();
+}
+
 if ($stmt->execute()){
     if ($stmt->fetch()){
-        echo "Username taken: ".$resusername;
+        header('Location: adminpanel.php?message=Username%20taken');
         exit();
     }
     else {
@@ -31,7 +36,8 @@ if ($stmt->execute()){
         $dateofbirth = date("Y-m-d", $_POST['DateOfBirth']);
 
         if ($stmt->execute()){
-            echo "true";
+            header('Location: adminpanel.php?message=Success');
+            exit();
         }
         else {
             header("HTTP/1.1 500 Internal Server Error");
