@@ -33,6 +33,7 @@ function fillarr(array) {
     var tablebody = document.getElementById("tablebody");
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
+        
         var createClickHandler =
             function(dataset) {
                 return function() {
@@ -47,12 +48,14 @@ function fillarr(array) {
                     //Zu bearbeitende Daten holen und anzeigen
                 };
             };
+
         row.onclick = createClickHandler(array[i]);
+
         row.appendChild(createtd(i));
         row.appendChild(createtd(array[i].FirstName));
         row.appendChild(createtd(array[i].LastName));
-        row.appendChild(createtd(array[i].DateOfBirth));
         row.appendChild(createtd(array[i].Username));
+        row.appendChild(createtd(array[i].DateOfBirth));
         row.appendChild(createtd(array[i].Mail));
 
         tablebody.appendChild(row);
