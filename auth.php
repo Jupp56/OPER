@@ -25,7 +25,9 @@ if (!$stmt->execute()) {
     exit();
 }
 
-if (!$stmt->fetch()){
+$stmt->store_result();
+
+if (!$stmt->fetch() || $stmt->num_rows < 1){
     header("HTTP/1.1 401 Unauthorized");
     header("Location: index.php?message=User%20does%20not%20exist");
     exit();
