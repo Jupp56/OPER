@@ -143,13 +143,13 @@
                     <div class="col">
                         <div class=" float-left">Vorname:</div>
                     </div>
-                    <div class="col"><input id="FirstName-Create" class="float-right" type="text" name="Firstname"></div>
+                    <div class="col"><input id="FirstName-Create" class="float-right" type="text" name="FirstName"></div>
                 </div>
                 <div class="row mt-2">
                     <div class="col">
                         <div class=" float-left">Nachname:</div>
                     </div>
-                    <div class="col"><input id="LastName-Create" class="float-right" type="text" name="Lastname"></div>
+                    <div class="col"><input id="LastName-Create" class="float-right" type="text" name="LastName"></div>
                 </div>
 
                 <div class="row mt-2">
@@ -168,7 +168,7 @@
                     <div class="col">
                         <div class="float-left">Mail:</div>
                     </div>
-                    <div class="col"><input id="Mail-Create" class="float-right" type="text" name="E-Mail"></div>
+                    <div class="col"><input id="Mail-Create" class="float-right" type="text" name="Mail"></div>
                 </div>
                 <div class="row mt-2">
                     <div class="col">
