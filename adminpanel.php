@@ -137,7 +137,7 @@ include 'adminauth.php';
     </div>
 
     <div id="createaccountwindow" class="overlay">
-        <form id="createaccountform" action="register.php" method="post" target="wastebin">
+        <form id="createaccountform" action="register.php" method="post">
             <div class="overlay-content">
                 <div class="row">
                     <div class="col">
