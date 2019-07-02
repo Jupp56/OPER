@@ -6,6 +6,3 @@
         <div class="col-auto">&#169; Deutsche Lebensrettungsgesellschaft e.V, Ortsverein Buxtehude 2019</div>
     </div>
 </footer>
-</body>
-
-</html>
