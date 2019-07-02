@@ -33,7 +33,7 @@ if ($stmt->execute()){
         $mail = $_POST['Mail'];
         $firstname = $_POST['FirstName'];
         $lastname = $_POST['LastName'];
-        $dateofbirth = date("Y-m-d", $_POST['DateOfBirth']);
+        $dateofbirth = $_POST['DateOfBirth'];
 
         if ($stmt->execute()){
             header('Location: adminpanel.php?message=Success');
