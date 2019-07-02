@@ -96,11 +96,7 @@ function sendcreateaccount() {
 }
 
 function resetcreateaccount() {
-    document.getElementById("FirstName-Create").value = "";
-    document.getElementById("LastName-Create").value = "";
-    document.getElementById("DateOfBirth-Create").value = "";
-    document.getElementById("Username-Create").value = "";
-    document.getElementById("Mail-Create").value = "";
+    document.getElementById("createaccountform").reset();
     document.getElementById("Password-Create").value = Math.random().toString(36).slice(-8);
 }
 

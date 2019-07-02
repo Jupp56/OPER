@@ -132,7 +132,7 @@
     </div>
 
     <div id="createaccountwindow" class="overlay">
-        <form action="register.php" method="post">
+        <form id="createaccountform" action="register.php" method="post">
             <div class="overlay-content">
                 <div class="row">
                     <div class="col">
