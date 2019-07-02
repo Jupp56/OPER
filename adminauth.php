@@ -14,7 +14,7 @@ if (!$_COOKIE['user']){
     exit();
 }
 
-$stmt = $mysqli->prepare('SELECT Token, IsAdmin FROM Users WHERE BINARY Username=?');
+$stmt = $mysqli->prepare('SELECT Token, IsAdmin FROM Users WHERE Username LIKE BINARY ?');
 $stmt->bind_param("s", $username);
 $username = $_COOKIE['user'];
 $stmt->bind_result($token, $isAdmin);

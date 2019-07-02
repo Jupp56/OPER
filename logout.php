@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('UPDATE Users SET Token=NULL WHERE BINARY Username=?');
+$stmt = $mysqli->prepare('UPDATE Users SET Token=NULL WHERE Username LIKE BINARY ?');
 $stmt->bind_param("s", $username);
 $username = $_COOKIE['user'];
 

@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('SELECT Username FROM Users WHERE BINARY Username=?');
+$stmt = $mysqli->prepare('SELECT Username FROM Users WHERE Username LIKE BINARY ?');
 
 $stmt->bind_param("s", $username);
 $username = $_POST['Username'];
