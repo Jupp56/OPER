@@ -197,7 +197,7 @@ include 'adminauth.php';
                         </button>
                     </div>
                     <div class="col">
-                        <button class="float-right" type="submit" onclick="sendcreateaccount()">
+                        <button class="float-right" type="button" onclick="sendcreateaccount()">
                             Erstellen
                         </button>
                     </div>

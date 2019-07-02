@@ -99,6 +99,7 @@ function hidecreateaccount() {
 
 function sendcreateaccount() {
     hidecreateaccount();
+    document.getElementById("createaccountform").submit();
     resetcreateaccount();
     getusers();
 }
