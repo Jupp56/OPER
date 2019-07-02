@@ -125,4 +125,8 @@ function sendgetrequest(url) {
     return xmlHttp.status;
 }
 
+function logout(){
+    window.location.href = 'logout.php';
+}
+
 window.onload = getusers;
