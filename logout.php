@@ -18,7 +18,8 @@ if (!$stmt->execute()) {
     exit();
 }
 
-header ("Set-Cookie: user=; token=");
+setcookie('token');
+setcookie('user');
 header('Location: index.php');
 exit();
 ?>
