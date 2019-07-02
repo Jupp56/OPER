@@ -11,7 +11,7 @@ if (mysqli_connect_errno()) {
 
 $stmt = $mysqli->prepare('DELETE FROM Users WHERE Username LIKE BINARY ?');
 $stmt->bind_param("s", $username);
-$username = $_POST['user'];
+$username = $_GET['user'];
 
 if ($stmt->execute()){
     header("Location: adminpanel.php?message=Successfully%20deleted");
