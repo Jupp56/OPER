@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
 
 if (!$_COOKIE['user']){
     header("HTTP/1.1 401 Unauthorized");
-    header("Location: index.php");
+    header("Location: index.php?message=Please%20log%20in%20first");
     exit();
 }
 
@@ -27,13 +27,13 @@ if (!$stmt->execute()) {
 
 if (!$stmt->fetch()){
     header("HTTP/1.1 401 Unauthorized");
-    header("Location: index.php");
+    header("Location: index.php?message=User%20does%20not%20exist");
     exit();
 }
 
 if ($token != $_COOKIE['token']){
     header("HTTP/1.1 401 Unauthorized");
-    header("Location: index.php");
+    header("Location: index.php?message=Session%20expired");
     exit();
 }
 
