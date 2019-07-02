@@ -142,7 +142,7 @@
 
                 <div class="row mt-3">
                     <div class="col">
-                        <button class="float-right" type="submit" onclick="resetcreateaccount()">
+                        <button class="float-right button-alt" type="button" onclick="resetcreateaccount()">
                             Zurücksetzen
                         </button>
                     </div>
