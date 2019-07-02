@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html> 
 
 <head>
     <meta charset="utf-8">
@@ -23,7 +24,7 @@
     <div id="addaccount" class="row ml-5 mr-5">
         <div class="col"><button class="float-right" onclick="showcreateaccount()">Neuer Account</button></div>
     </div>
-    
+
     <div id="accountlist" class="container-fluid mt-5">
 
         <div class="row flex-xl-nowrap ml-5 mt-2 mr-5">
@@ -31,9 +32,12 @@
                 <div class="table-responsive">
                     <table id="usertable" class="table table-striped table-hover">
                         <thead>
-                            <th>Name</th>
+                            <th>#</th>
+                            <th>Vorname</th>
+                            <th>Nachname</th>
+                            <th>Benutzername</th>
+                            <th>Geburtsdatum</th>
                             <th>Mailadresse</th>
-                            <th>Sonstiges</th>
                         </thead>
                         <tbody id="tablebody">
                             <tr>
@@ -57,15 +61,33 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        <div class=" float-left">Name:</div>
+                        <div class=" float-left">Vorname:</div>
                     </div>
-                    <div class="col"><input id="Name-Single" class="float-right" type="text" name="Username"></div>
+                    <div class="col"><input id="FirstName-Single" class="float-right" type="text" name="FirstName"></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class=" float-left">Nachname:</div>
+                    </div>
+                    <div class="col"><input id="LastName-Single" class="float-right" type="text" name="LastName"></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class=" float-left">Geburtsdatum:</div>
+                        </div>
+                        <div class="col"><input id="DateOfBirth-Single" class="float-right" type="date" value="2000-01-01" name="DateOfBirth"></div>
+                    </div>
+                    <div class="col">
+                        <div class=" float-left">Benutzername:</div>
+                    </div>
+                    <div class="col"><input id="Username-Single" class="float-right" type="text" name="Username"></div>
                 </div>
                 <div class="row mt-2">
                     <div class="col">
                         <div class=" float-left">Mail:</div>
                     </div>
-                    <div class="col"><input id="Mail-Single" class="float-right" type="text" name="E-Mail"></div>
+                    <div class="col"><input id="Mail-Single" class="float-right" type="text" name="Mail"></div>
                 </div>
                 <div class="row mt-4">
                     <div class="col">
@@ -119,21 +141,40 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        <div class=" float-left">Name:</div>
+                        <div class=" float-left">Vorname:</div>
                     </div>
-                    <div class="col"><input id="Name-Single" class="float-right" type="text" name="Username"></div>
+                    <div class="col"><input id="FirstName-Create" class="float-right" type="text" name="Firstname"></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class=" float-left">Nachname:</div>
+                    </div>
+                    <div class="col"><input id="LastName-Create" class="float-right" type="text" name="Lastname"></div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class=" float-left">Geburtsdatum:</div>
+                    </div>
+                    <div class="col"><input id="DateOfBirth-Create" class="float-right" type="date" value="2000-01-01" name="DateOfBirth"></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class=" float-left">Benutzername:</div>
+                    </div>
+                    <div class="col"><input id="Username-Create" class="float-right" type="text" name="Username"></div>
                 </div>
                 <div class="row mt-2">
                     <div class="col">
                         <div class="float-left">Mail:</div>
                     </div>
-                    <div class="col"><input id="Mail-Single" class="float-right" type="text" name="E-Mail"></div>
+                    <div class="col"><input id="Mail-Create" class="float-right" type="text" name="E-Mail"></div>
                 </div>
                 <div class="row mt-2">
                     <div class="col">
                         <div class="float-left">Passwort:</div>
                     </div>
-                    <div class="col"><input id="Password-Single" class="float-right" type="text" name="Password"></div>
+                    <div class="col"><input id="Password-Create" class="float-right" type="text" name="Password"></div>
                 </div>
                 <div class="row mt-4">
                     <div class="col">

@@ -11,8 +11,12 @@ function getusers() {
     xmlHttp.onload = function(e) {
         if (xmlHttp.status === 200) {
             var result = xmlHttp.responseText;
-            console.log(xmlHttp.responseText);
+            try{
             var dataset = JSON.parse(result);
+            }
+            catch(e) {
+                return;
+            }
             fillarr(dataset);
         } else {
             console.log(xmlHttp.statusText);
@@ -30,23 +34,26 @@ function fillarr(array) {
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
         var createClickHandler =
-            function(row) {
+            function(dataset) {
                 return function() {
-                    var cells = row.getElementsByTagName("td");
-                    var thisusername = cells[0].innerHTML;
-                    var thismail = cells[1].innerHTML;
-                    currentuser = thisusername;
                     showsingleaccount();
-                    document.getElementById("Name-Single").value = thisusername;
-                    document.getElementById("Mail-Single").value = thismail;
+
+                    document.getElementById("FirstName-Single").value = dataset.FirstName;
+                    document.getElementById("LastName-Single").value = dataset.LastName;
+                    document.getElementById("DateOfBirth-Single").value=dataset.DateOfBirth;
+                    document.getElementById("Username-Single").value = dataset.Username;
+                    document.getElementById("Mail-Single").value = dataset.Mail;
                     currentaccount = thisusername;
                     //Zu bearbeitende Daten holen und anzeigen
                 };
             };
-        row.onclick = createClickHandler(row);
+        row.onclick = createClickHandler(array[i]);
+        row.appendChild(createtd(i));
+        row.appendChild(createtd(array[i].FirstName));
+        row.appendChild(createtd(array[i].LastName));
+        row.appendChild(createtd(array[i].DateOfBirth));
         row.appendChild(createtd(array[i].Username));
         row.appendChild(createtd(array[i].Mail));
-        row.appendChild(createtd(array[i].Salt));
 
         tablebody.appendChild(row);
     }
