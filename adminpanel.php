@@ -1,4 +1,9 @@
+<?php
+include 'adminpanel.php'
+?>
+
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -52,7 +57,7 @@
     </div>
 
     <div id="singleaccount" class="overlay">
-        <form action="updateuser.php" method="post">
+        <form action="updateuser.php" method="post" target="wastebin">
             <div class="overlay-content">
                 <div class="row">
                     <div class="col">
@@ -132,7 +137,7 @@
     </div>
 
     <div id="createaccountwindow" class="overlay">
-        <form id="createaccountform" action="register.php" method="post">
+        <form id="createaccountform" action="register.php" method="post" target="wastebin">
             <div class="overlay-content">
                 <div class="row">
                     <div class="col">
@@ -201,6 +206,7 @@
         </form>
     </div>
 
+    <iframe name="wastebin" width="0" height="0" style="display: none;"></iframe>
     <?php
     include 'footer.php';
     ?>
