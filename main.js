@@ -51,3 +51,7 @@ function createtd(tdvalue) {
     cell.appendChild(cellText);
     return cell;
 }
+
+function newcourse(){
+    
+}
