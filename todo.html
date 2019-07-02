@@ -1,19 +1,52 @@
 <h1>Todo:</h1>
 <ul>
-    <li>
-        <h2>UI</h2>
-    </li>
-    <li>
-        <h3>Technisch</h3>
-    </li>
-    <li>Entfernen-Button -> Funktionalität</li>
 
-    <li>
-        <h2>Backend-Integration</h2>
-    </li>
-    <li>Sanity checking/was passiert, wenns nicht klappt mit dem hinzufügen?</li>
-    <li>Doppeltes hinzufügen vermeiden? Server- und Clientseitig? Oder reicht da der Client?</li>
-    <li>Submit, ohne auf andere Website umzuleiten?</li>
-    <li>Immer noch aktuell: wie überprüfen wir auf Berechtigung?</li>
-    <li>Welcher User darf welche Kurse sehen und mit welchen Kursen interagieren? "Einladung" anderer Prüfer?</li>
+    <h2>UI</h2>
+    <ul>
+        <li>
+            <h3>Technisch</h3>
+        </li>
+        <ul>
+            <li>course.php -> Spalten anpassen</li>
+            <li>Entfernen-Button -> Funktionalität</li>
+            <li>Übergebene Nachrichten anzeigen</li>
+            <li>Kursdaten sichern</li>
+            <li>Bei der Suche auch die Geburtsdaten anzeigen, dann auswählen lassen</li>
+            <li>Interface, um Teilnehmer hinzuzufügen und zu löschen, (sowie Ergebnisse pro Teilnehmer anzuzeigen (und
+                zu
+                drucken?))</li>
+            <li>Interface, um Kurse hinzuzufügen und zu löschen</li>
+        </ul>
+    </ul>
+
+    <h2>Backend</h2>
+    <ul>
+        <li>deletuser.php</li>
+        Kursmanagement
+        <ul>
+            <li>Neuen Kurs anlegen</li>
+            <li>Teilnehmer zu Kurs hinzufügen (ohne Note)</li>
+            <li>Kursdaten sichern (alle Ergebnisse werden als 2d-Array übergeben)- savecourse.php</li>
+        </ul>
+
+
+        Teilnehmermanagement
+        <ul>
+            <li>Liste der Teilnehmer des Kurses holen (userid)</li>
+            <li>Liste von allen möglichen Teilnehmern holen (userid, Vorname, Nachname, Geburtsdatum)</li>
+            <li>Teilnehmer hinzufügen (nach userid)</li>
+            <li>Teilnehmer entfernen (nach userid)</li>
+        </ul>
+
+
+        <h3>Backend-Integration</h3>
+        <ul>
+            <li>Sanity checking/was passiert, wenns nicht klappt mit dem hinzufügen?</li>
+            <li>Doppeltes hinzufügen vermeiden? Server- und Clientseitig? Oder reicht da der Client?</li>
+            <li>Submit, ohne auf andere Website umzuleiten?</li>
+            <li>Immer noch aktuell: wie überprüfen wir auf Berechtigung?</li>
+            <li>Welcher User darf welche Kurse sehen und mit welchen Kursen interagieren? "Einladung" anderer Prüfer?
+            </li>
+        </ul>
+    </ul>
 </ul>

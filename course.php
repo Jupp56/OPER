@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div id="container">
     <div id="userdata">
         <div class="row">
             <div class="col-auto myborder">
@@ -87,8 +88,10 @@
         </div>
     </div>
 
-    
-
+</div>
     <?php
     include 'footer.php';
     ?>
+</body>
+
+</html>
