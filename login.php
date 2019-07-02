@@ -16,7 +16,7 @@ $stmt->bind_result($hash, $salt, $isAdmin);
 $username = $_POST['Username'];
 
 if ($stmt->execute()){
-    if (!$stmt->fetch()) {
+    if (!$stmt->fetch() || $stmt->num_rows < 1) {
 		echo "User does not exist";
 		exit();
 	}

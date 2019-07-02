@@ -14,7 +14,8 @@ $stmt->bind_param("s", $username);
 $username = $_POST['Username'];
 
 if ($stmt->execute()){
-    if ($stmt->fetch()){
+    $stmt->store_result();
+    if ($stmt->fetch() && $stmt->num_rows > 0){
         echo "Username taken";
         exit();
     }
