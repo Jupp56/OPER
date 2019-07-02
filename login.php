@@ -20,16 +20,19 @@ if ($stmt->execute()){
 		echo "User does not exist";
 		exit();
 	}
+	while ($stmt->fetch()){}
     $hashed = hash("sha256", $_POST['Password'].$salt);
     if ($hashed == $hash) {
         $token = bin2hex(random_bytes(64));
+		mysqli_report(MYSQLI_REPORT_ALL);
         $stmt = $mysqli->prepare('UPDATE Users SET Token=? WHERE Username=?');
         $stmt->bind_param("ss", $token, $username);
         if (!$stmt->execute()) {
             header("HTTP/1.1 500 Internal Server Error");
             echo $stmt->error;
         }
-        header ("Set-Cookie: user=$username; token=$token");
+        header("Set-Cookie: user=$username");
+		header("Set-Cookie: token=$token");
         if ($isAdmin) header('Location: adminpanel.php');
         else header('Location: main.php');
         exit();
