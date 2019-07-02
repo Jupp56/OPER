@@ -22,7 +22,7 @@ if ($stmt->execute()){
 	}
     $hashed = hash("sha256", $_POST['Password'].$salt);
     if ($hashed == $hash) {
-        $token = bin2hex(openssl_random_pseudo_bytes(64));
+        $token = bin2hex(random_bytes(64));
         $stmt = $mysqli->prepare('UPDATE Users SET Token=? WHERE Username=?');
         $stmt->bind_param("ss", $token, $username);
         if (!$stmt->execute()) {
