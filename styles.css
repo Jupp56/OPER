@@ -33,6 +33,7 @@ input {
 }
 
 footer {
+    z-index: 1;
     border: none;
     position: absolute;
     bottom: 0;
