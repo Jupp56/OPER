@@ -2,7 +2,7 @@ var currentaccount;
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 function getusers() {
-
+    cleartable(document.getElementById("usertable"));
     var xmlHttp = new XMLHttpRequest();
     var getusersurl = baseurl + "/getusers.php";
 
@@ -68,6 +68,13 @@ function createtd(tdvalue) {
     cell.appendChild(cellText);
     return cell;
 }
+
+function cleartable(table) {
+    for (var i = table.rows.length - 1; i >= 0; i--) {
+        table.deleteRow(i);
+    }
+}
+
 
 function getdetails() {
     console.log("details");
