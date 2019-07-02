@@ -1,5 +1,5 @@
 <?php
-include 'adminpanel.php'
+include 'adminauth.php';
 ?>
 
 <!DOCTYPE html>
