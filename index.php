@@ -9,6 +9,8 @@
     <meta charset="utf-8">
 
     <script lang="javascript">
+        var msg = '<?php print($_GET['message']); ?>';
+        if (msg) alert(msg);
     </script>
 
 </head>
