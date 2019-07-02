@@ -206,7 +206,7 @@ include 'adminauth.php';
         </form>
     </div>
 
-    <iframe name="wastebin" width="0" height="0" style="display: none;"></iframe>
+    <iframe name="wastebin" width="50" height="50" style="display: none;"></iframe>
     <?php
     include 'footer.php';
     ?>

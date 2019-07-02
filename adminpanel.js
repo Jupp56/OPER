@@ -93,6 +93,7 @@ function hidecreateaccount() {
 function sendcreateaccount() {
     hidecreateaccount();
     resetcreateaccount();
+    getusers();
 }
 
 function resetcreateaccount() {
@@ -108,6 +109,7 @@ function deleteaccountconfirm() {
     var url = baseurl + "/deleteuser.php?user=" + currentaccount;
     alert(sendgetrequest(url).toString());
     document.getElementById("deletewindow").style.width = "0%";
+    getusers();
 }
 
 function deleteaccountdeny() {
