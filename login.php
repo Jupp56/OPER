@@ -30,8 +30,8 @@ if ($stmt->execute()){
             header("HTTP/1.1 500 Internal Server Error");
             echo $stmt->error;
         }
-        header("Set-Cookie: user=$username");
-		header("Set-Cookie: token=$token");
+        setcookie("user", $username);
+		setcookie("token", $token);
         if ($isAdmin) header('Location: adminpanel.php');
         else header('Location: main.php');
         exit();
