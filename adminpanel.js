@@ -90,6 +90,20 @@ function hidecreateaccount() {
     document.getElementById("createaccountwindow").style.width = "0%";
 }
 
+function sendcreateaccount() {
+    hidecreateaccount();
+    resetcreateaccount();
+}
+
+function resetcreateaccount() {
+    document.getElementById("FirstName-Create").value = "";
+    document.getElementById("LastName-Create").value = "";
+    document.getElementById("DateOfBirth-Create").value = "";
+    document.getElementById("Username-Create").value = "";
+    document.getElementById("Mail-Create").value = "";
+    document.getElementById("Password-Create").value = Math.random().toString(36).slice(-8);
+}
+
 function deleteaccount() {
     document.getElementById("deletewindow").style.width = "100%";
 }

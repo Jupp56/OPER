@@ -139,7 +139,16 @@
                         <h2>Neuen Account erstellen</h2>
                     </div>
                 </div>
-                <div class="row mt-2">
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <button class="float-right" type="submit" onclick="resetcreateaccount()">
+                            Zurücksetzen
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
                     <div class="col">
                         <div class=" float-left">Vorname:</div>
                     </div>
@@ -183,7 +192,7 @@
                         </button>
                     </div>
                     <div class="col">
-                        <button class="float-right" type="submit" onclick="hidecreateaccount()">
+                        <button class="float-right" type="submit" onclick="sendcreateaccount()">
                             Erstellen
                         </button>
                     </div>
