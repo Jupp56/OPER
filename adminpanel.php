@@ -21,7 +21,7 @@ include 'adminpanel.php'
         <div class="row">
             <div class="col-auto myborder">
                 Benutzer: Nutzername<br>
-                <button class="mt-1 float-right">Abmelden</button>
+                <button class="mt-1 float-right" onclick="logout();">Abmelden</button>
             </div>
         </div>
     </div>
