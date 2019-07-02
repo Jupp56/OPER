@@ -1,5 +1,6 @@
 <?php
 require_once("constants.php");
+require_once("adminauth.php");
 
 $mysqli = new mysqli(MYSQLI_IP, MYSQLI_USER, MYSQLI_PASS, MYSQLI_DB, MYSQLI_PORT);
 
@@ -33,7 +34,7 @@ if ($stmt->execute()){
         $mail = $_POST['Mail'];
         $firstname = $_POST['FirstName'];
         $lastname = $_POST['LastName'];
-        $dateofbirth = date("Y-m-d", $_POST['DateOfBirth']);
+        $dateofbirth = $_POST['DateOfBirth'];
 
         if ($stmt->execute()){
             header('Location: adminpanel.php?message=Success');

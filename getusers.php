@@ -1,5 +1,6 @@
 <?php
 require_once("constants.php");
+require_once("adminauth.php");
 
 $mysqli = new mysqli(MYSQLI_IP, MYSQLI_USER, MYSQLI_PASS, MYSQLI_DB, MYSQLI_PORT);
 
