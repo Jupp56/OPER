@@ -34,7 +34,10 @@
                     <table id="usertable" class="table table-striped table-hover">
                         <thead>
                             <th>#</th>
-                            <th>Name</th>
+                            <th>Vorname</th>
+                            <th>Nachname</th>
+                            <th>Geburtsdatum</th>
+                            <th>ID</th>
                             <th>Note</th>
                             <th>Entfernen</th>
                         </thead>

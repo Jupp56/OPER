@@ -26,7 +26,7 @@ function getdata() {
 }
 
 function fillarr(array) {
-    var array = new Array({ Participant: "John Doe", Grade: 2.7 });
+    var array = new Array({FirstName: "John", LastName: "Doe", DateOfBirth: "2017-05-03", ID: "1729", Grade: 2.7 });
 
     var table = document.getElementById("usertable");
     table.deleteRow(1);
@@ -34,9 +34,12 @@ function fillarr(array) {
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
         row.appendChild(createth(i + 1));
-        row.appendChild(createtd(array[i].Participant));
+        row.appendChild(createtd(array[i].FirstName));
+        row.appendChild(createtd(array[i].LastName));
+        row.appendChild(createtd(array[i].DateOfBirth));
+        row.appendChild(createtd(array[i].ID));
         row.appendChild(createinput(array[i].Grade));
-        row.appendChild(createbutton("Entfernen", "button-warn", array[i].Participant));
+        row.appendChild(createbutton("X", "button-warn", array[i].Participant));
 
         tablebody.appendChild(row);
     }
