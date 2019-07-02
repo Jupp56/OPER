@@ -19,11 +19,15 @@ if ($stmt->execute()){
         exit();
     }
     else {
-        $stmt = $mysqli->prepare('INSERT INTO Users (Username, Hash, Salt) VALUES (?, ?, ?)');
+        $stmt = $mysqli->prepare('INSERT INTO Users (Username, Hash, Salt, Mail, FirstName, LastName, DateOfBirth) VALUES (?, ?, ?, ?, ?, ?, ?)');
 
-        $stmt->bind_param("sss", $username, $hash, $salt);
+        $stmt->bind_param("sssssss", $username, $hash, $salt, $mail, $firstname, $lastname, $dateofbirth);
         $salt = date("D M d, Y G:i");
         $hash = hash("sha256", $_POST['Password'].$salt);
+        $mail = $_POST['Mail'];
+        $firstname = $_POST['FirstName'];
+        $lastname = $_POST['LastName'];
+        $dateofbirth = date("Y-m-d", $_POST['DateOfBirth']);
 
         if ($stmt->execute()){
             echo "true";
