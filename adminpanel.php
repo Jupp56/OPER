@@ -1,5 +1,5 @@
 <?php
-include 'adminauth.php';
+require_once('adminauth.php');
 ?>
 
 <!DOCTYPE html>
