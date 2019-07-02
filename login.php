@@ -24,7 +24,6 @@ if ($stmt->execute()){
     $hashed = hash("sha256", $_POST['Password'].$salt);
     if ($hashed == $hash) {
         $token = bin2hex(random_bytes(64));
-		mysqli_report(MYSQLI_REPORT_ALL);
         $stmt = $mysqli->prepare('UPDATE Users SET Token=? WHERE Username LIKE BINARY ?');
         $stmt->bind_param("ss", $token, $username);
         if (!$stmt->execute()) {
