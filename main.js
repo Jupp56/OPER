@@ -53,5 +53,13 @@ function createtd(tdvalue) {
 }
 
 function newcourse(){
-    
+    showcourseoverlay();
+}
+
+function showcourseoverlay() {
+    document.getElementById("coursecreateoverlay").style.width = "100%";
+}
+
+function hidecourseoverlay() {
+    document.getElementById("coursecreateoverlay").style.width = "0%";
 }

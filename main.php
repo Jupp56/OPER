@@ -7,8 +7,10 @@ require_once('auth.php');
 <head>
     <meta charset="utf-8">
     <title>OPER</title>
-
+    <!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+-->
+    <link rel="stylesheet" href="bootstrap40min.css">
     <link rel="stylesheet" href="styles.css">
     <script lang="javascript" type="text/javascript" src="main.js"></script>
 
@@ -25,7 +27,7 @@ require_once('auth.php');
             </div>
         </div>
 
-        <div id="addbutton" class="row mt-5">
+        <div id="addbutton" class="row mt-5 mr-5">
             <div class="col">
                 <button class="float-right" onclick="newcourse();">Neuer Kurs</button>
             </div>
@@ -33,12 +35,21 @@ require_once('auth.php');
 
         <div id="coursecreateoverlay" class="overlay">
             <div class="overlay-content">
-                <div class="row">
-                    <div class="col">
-                        <h2>Neuen Kurs anlegen</h2>
+                <form class="mb-0 pb-0" action="addcourse.php">
+                    <div class="row">
+                        <div class="col">
+                            <h2>Neuen Kurs anlegen</h2>
+                        </div>
                     </div>
-                </div>
-                <div class="row"><div class="col">Name des Kurses:</div><div class="col"><input class="float-right" type="text" name="CourseName"></div></div>
+                    <div class="row mt-4">
+                        <div class="col">Name des Kurses:</div>
+                        <div class="col"><input class="float-right" type="text" name="CourseName"></div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col"><button class="float-left button-alt" type="button" onclick="hidecourseoverlay()">Abbrechen</button></div>
+                        <div class="col"><button class="float-right" type="submit" onclick="hidecourseoverlay()">Hinzufügen</button></div>
+                    </div>
+                </form>
             </div>
         </div>
 
