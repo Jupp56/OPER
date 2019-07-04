@@ -20,6 +20,12 @@ $originalusername = $_POST['OriginalUsername'];
 
 if ($stmt->execute()){
     $count = $stmt->affected_rows;
+
+    while ($stmt->fetch()){ };
+    $stmt = $mysqli->prepare("UPDATE UserCourses SET Username=? WHERE Username=?");
+    $stmt->bind_param("ss", $username, $originalusername);
+    $stmt->execute();
+    
     header('Location: adminpanel.php?message=Successfully%20updated%20'.$count.'%20entries.');
     exit();
 } else {
