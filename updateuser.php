@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli-prepare("UPDATE Users SET Username=?,FirstName=?,LastName=?,DateOfBirth=?,Mail=? WHERE Username=?");
+$stmt = $mysqli->prepare("UPDATE Users SET Username=?,FirstName=?,LastName=?,DateOfBirth=?,Mail=? WHERE Username=?");
 $stmt->bind_param("ssssss", $username, $firstname, $lastname, $dateofbirth, $mail, $originalusername);
 
 $username = $_POST['Username'];
