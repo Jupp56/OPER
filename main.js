@@ -50,6 +50,7 @@ function createtd(tdvalue) {
     var cellText = document.createTextNode(tdvalue);
     cell.appendChild(cellText);
     return cell;
+    
 }
 
 function newcourse(){
@@ -62,8 +63,4 @@ function showcourseoverlay() {
 
 function hidecourseoverlay() {
     document.getElementById("coursecreateoverlay").style.width = "0%";
-}
-
-function logout(){
-    window.location.href = 'logout.php';
 }

@@ -12,6 +12,7 @@ require_once('adminauth.php');
 
     <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="styles.css">
+    <script lang="javascript" type="text/javascript" src="global.js"></script>
     <script lang="javascript" type="text/javascript" src="adminpanel.js"></script>
 
 </head>
@@ -21,7 +22,7 @@ require_once('adminauth.php');
         <div id="userdata">
             <div class="row">
                 <div class="col-auto myborder">
-                    Benutzer: <?php print($_COOKIE['user']);?><br>
+                    Benutzer: Nutzername<br>
                     <button class="mt-1 float-right" onclick="logout();">Abmelden</button>
                 </div>
             </div>

@@ -12,6 +12,7 @@ require_once('auth.php');
 -->
     <link rel="stylesheet" href="bootstrap40min.css">
     <link rel="stylesheet" href="styles.css">
+    <script lang="javascript" type="text/javascript" src="global.js"></script>
     <script lang="javascript" type="text/javascript" src="main.js"></script>
 
 </head>
@@ -21,8 +22,8 @@ require_once('auth.php');
         <div id="userdata">
             <div class="row">
                 <div class="col-auto myborder">
-                    Benutzer: <?php print($_COOKIE['user']);?><br>
-                    <button class="mt-1 float-right" onclick="logout();">Abmelden</button>
+                    Benutzer: Nutzername<br>
+                    <button class="mt-1 float-right">Abmelden</button>
                 </div>
             </div>
         </div>

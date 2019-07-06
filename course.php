@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <script lang="javascript" type="text/javascript" src="global.js"></script>
     <script lang="javascript" type="text/javascript" src="course.js"></script>
 
 </head>
@@ -68,7 +69,8 @@
                     <div class="col">
                         <div class="row">
                             <div class="col">
-                                <input id="participantsearchbox" name="UserId" type="text" oninput="search()">
+                                <input id="participantsearchbox" type="text" oninput="search()">
+                                <input id="participantsearcheduserid" class="hidden" type="text" name="UserId">
                             </div>
                         </div>
                         <div class="row">

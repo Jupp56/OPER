@@ -12,7 +12,7 @@ function getdata() {
 
     xmlHttp.open("GET", url, true); //true for asynchronous request
 
-    xmlHttp.onload = function(e) {
+    xmlHttp.onload = function (e) {
         if (xmlHttp.status === 200) {
             var result = xmlHttp.responseText;
             console.log(xmlHttp.responseText);
@@ -26,7 +26,7 @@ function getdata() {
 }
 
 function fillarr(array) {
-    var array = new Array({FirstName: "John", LastName: "Doe", DateOfBirth: "2017-05-03", ID: "1729", Grade: 2.7 });
+    var array = new Array({ FirstName: "John", LastName: "Doe", DateOfBirth: "2017-05-03", ID: "1729", Grade: 2.7 });
 
     var table = document.getElementById("usertable");
     table.deleteRow(1);
@@ -77,7 +77,7 @@ function createbutton(text, buttonclass, Participant) {
     button.textContent = text;
     button.className = buttonclass;
 
-    button.onclick = function() {
+    button.onclick = function () {
         deleteaccountgrade(Participant);
     };
 
@@ -86,8 +86,9 @@ function createbutton(text, buttonclass, Participant) {
 
 }
 
-function deleteaccountgrade(varr) {
-    unsaved = true;
+function deleteaccountgrade(participantid) {
+    sendsyncgetrequest(baseurl + "/deleteaccountgrade.php?Course=" + coursename + "&ParticipantId=" + participantid)
+    getdata();
 }
 
 function addparticipant() {
@@ -117,21 +118,23 @@ function search() {
     // }
     //test data
     var allusers = new Array(
-        "Martin Fowler",
-        "Max Mustermann",
-        "Paul Lambert",
-        "Jeff Davis",
-        "Dagobert Duck",
-        "Daniel Davis"
+        { FirstName: "Martin", LastName: "Fowler", DateOfBirth: "1989-03-23", UserId: 23 },
+        { FirstName: "Max", LastName: "Mustermann", DateOfBirth: "2000-08-12", UserId: 26 },
+        { FirstName: "Paul", LastName: "Lambert", DateOfBirth: "1924-07-03", UserId: 4 },
+        { FirstName: "Jeff", LastName: "Davis", DateOfBirth: "1955-02-20", UserId: 236 },
+        { FirstName: "Dagobert", LastName: "Duck", DateOfBirth: "1999-12-17", UserId: 12 }
     )
     var searchexpression = new RegExp(searchterm, "gi");
 
     allusers.forEach(participant => {
-        if (participant.match(searchexpression)) {
+        var fullname = participant.FirstName + " " + participant.LastName;
+        if (fullname.match(searchexpression)) {
             var row = document.createElement("tr");
-            row.appendChild(createtd(participant));
-            row.onclick = function() {
-                document.getElementById("participantsearchbox").value = participant;
+            row.appendChild(createtd(fullname));
+            row.appendChild(createtd(participant.DateOfBirth))
+            row.onclick = function () {
+                document.getElementById("participantsearchbox").value = fullname;
+                document.getElementById("participantsearcheduserid").value = participant.UserId;
                 cleartable(resultfield);
             }
             resultfield.appendChild(row);
@@ -153,13 +156,6 @@ function changeoccured() {
 function save() {
     unsaved = false;
     //TODO: Read list and send to server - wait for confirmation, else alert user that data is unsaved
-}
-
-function sendgetrequest(url) {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", url, false); //true for asynchronous request
-    xmlHttp.send(null);
-    return xmlHttp.responseText;
 }
 
 function back() {

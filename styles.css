@@ -119,3 +119,9 @@ tbody tr {
     border-style: solid;
     width: auto;
 }
+
+.hidden {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
