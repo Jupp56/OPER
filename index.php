@@ -35,9 +35,9 @@
                                 <div class="row">
                                     <div class="col">
                                         <small>
-                                            Onlineverwaltung der<br>
-                                            PrüfungsErgebnisse<br>
-                                            im Rettungsdienst
+                                            <strong>O</strong>nlineverwaltung der<br>
+                                            <strong>P</strong>rüfungs<strong>E</strong>rgebnisse<br>
+                                            im <strong>R</strong>ettungsdienst
                                         </small>
                                     </div>
                                 </div>
