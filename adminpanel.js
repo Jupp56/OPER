@@ -2,19 +2,18 @@ var currentaccount;
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 function getusers() {
- 
+
     var xmlHttp = new XMLHttpRequest();
     var getusersurl = baseurl + "/getusers.php";
 
     xmlHttp.open("GET", getusersurl, true); //true for asynchronous request
 
-    xmlHttp.onload = function (e) {
+    xmlHttp.onload = function(e) {
         if (xmlHttp.status === 200) {
             var result = xmlHttp.responseText;
             try {
                 var dataset = JSON.parse(result);
-            }
-            catch (e) {
+            } catch (e) {
                 return;
             }
             fillarr(dataset);
@@ -35,14 +34,15 @@ function fillarr(array) {
         var row = document.createElement("tr");
 
         var createClickHandler =
-            function (dataset) {
-                return function () {
+            function(dataset) {
+                return function() {
                     showsingleaccount();
 
                     document.getElementById("FirstName-Single").value = dataset.FirstName;
                     document.getElementById("LastName-Single").value = dataset.LastName;
                     document.getElementById("DateOfBirth-Single").value = dataset.DateOfBirth;
                     document.getElementById("Username-Single").value = dataset.Username;
+                    document.getElementById("Username-Single-Old").value = dataset.Username;
                     document.getElementById("Mail-Single").value = dataset.Mail;
                     currentaccount = thisusername;
                     //Zu bearbeitende Daten holen und anzeigen
@@ -135,7 +135,7 @@ function sendgetrequest(url) {
     return xmlHttp.status;
 }
 
-function logout(){
+function logout() {
     window.location.href = 'logout.php';
 }
 
