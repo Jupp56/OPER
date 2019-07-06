@@ -22,7 +22,7 @@ require_once('adminauth.php');
         <div id="userdata">
             <div class="row">
                 <div class="col-auto myborder">
-                    Benutzer: Nutzername<br>
+                    Benutzer: <?php print($_COOKIE['user']);?><br>
                     <button class="mt-1 float-right" onclick="logout();">Abmelden</button>
                 </div>
             </div>
