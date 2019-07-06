@@ -19,14 +19,9 @@ require_once('auth.php');
 
 <body>
     <div id="container">
-        <div id="userdata">
-            <div class="row">
-                <div class="col-auto myborder">
-                    Benutzer: <?php print($_COOKIE['user']);?><br>
-                    <button class="mt-1 float-right">Abmelden</button>
-                </div>
-            </div>
-        </div>
+        <?php
+            include 'userdata.php';
+        ?>
 
         <div id="addbutton" class="row mt-5 mr-5">
             <div class="col">

@@ -19,14 +19,9 @@ require_once('adminauth.php');
 
 <body>
     <div id="container">
-        <div id="userdata">
-            <div class="row">
-                <div class="col-auto myborder">
-                    Benutzer: <?php print($_COOKIE['user']);?><br>
-                    <button class="mt-1 float-right" onclick="logout();">Abmelden</button>
-                </div>
-            </div>
-        </div>
+        <?php
+        include 'userdata.php';
+        ?>
 
         <div id="addaccount" class="row ml-5 mr-5">
             <div class="col"><button class="float-right" onclick="showcreateaccount()">Neuer Account</button></div>
