@@ -62,12 +62,6 @@ function fillarr(array) {
     }
 }
 
-function createtd(tdvalue) {
-    var cell = document.createElement("td");
-    var cellText = document.createTextNode(tdvalue);
-    cell.appendChild(cellText);
-    return cell;
-}
 
 function cleartable(table) {
     for (var i = table.rows.length - 1; i > 0; i--) {

@@ -40,20 +40,13 @@ function fillarr(array) {
         row.onclick = createClickHandler(array, i);
         row.appendChild(createtd(array[i].Course));
         row.appendChild(createtd(array[i].Participants));
-
+        row.appendChild(createtd(array[i].Participants));
         tablebody.appendChild(row);
     }
 }
 
-function createtd(tdvalue) {
-    var cell = document.createElement("td");
-    var cellText = document.createTextNode(tdvalue);
-    cell.appendChild(cellText);
-    return cell;
-    
-}
 
-function newcourse(){
+function newcourse() {
     showcourseoverlay();
 }
 

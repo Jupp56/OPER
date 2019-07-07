@@ -12,7 +12,7 @@ function getdata() {
 
     xmlHttp.open("GET", url, true); //true for asynchronous request
 
-    xmlHttp.onload = function (e) {
+    xmlHttp.onload = function(e) {
         if (xmlHttp.status === 200) {
             var result = xmlHttp.responseText;
             console.log(xmlHttp.responseText);
@@ -45,29 +45,6 @@ function fillarr(array) {
     }
 }
 
-function createth(thvalue) {
-    var cell = document.createElement("th");
-    cell.scope = "row";
-    var celltext = document.createTextNode(thvalue);
-    cell.appendChild(celltext);
-    return cell;
-}
-
-function createtd(tdvalue) {
-    var cell = document.createElement("td");
-    var cellText = document.createTextNode(tdvalue);
-    cell.appendChild(cellText);
-    return cell;
-}
-
-function createinput(currentordefaultvalue) {
-    var cell = document.createElement("td");
-    var inputfield = document.createElement("input");
-    inputfield.value = currentordefaultvalue;
-    inputfield.onchange = changeoccured;
-    cell.appendChild(inputfield);
-    return cell;
-}
 
 function createbutton(text, buttonclass, Participant) {
     var cell = document.createElement("td");
@@ -77,7 +54,7 @@ function createbutton(text, buttonclass, Participant) {
     button.textContent = text;
     button.className = buttonclass;
 
-    button.onclick = function () {
+    button.onclick = function() {
         deleteaccountgrade(Participant);
     };
 
@@ -117,13 +94,7 @@ function search() {
     //     return;
     // }
     //test data
-    var allusers = new Array(
-        { FirstName: "Martin", LastName: "Fowler", DateOfBirth: "1989-03-23", UserId: 23 },
-        { FirstName: "Max", LastName: "Mustermann", DateOfBirth: "2000-08-12", UserId: 26 },
-        { FirstName: "Paul", LastName: "Lambert", DateOfBirth: "1924-07-03", UserId: 4 },
-        { FirstName: "Jeff", LastName: "Davis", DateOfBirth: "1955-02-20", UserId: 236 },
-        { FirstName: "Dagobert", LastName: "Duck", DateOfBirth: "1999-12-17", UserId: 12 }
-    )
+    var allusers = new Array({ FirstName: "Martin", LastName: "Fowler", DateOfBirth: "1989-03-23", UserId: 23 }, { FirstName: "Max", LastName: "Mustermann", DateOfBirth: "2000-08-12", UserId: 26 }, { FirstName: "Paul", LastName: "Lambert", DateOfBirth: "1924-07-03", UserId: 4 }, { FirstName: "Jeff", LastName: "Davis", DateOfBirth: "1955-02-20", UserId: 236 }, { FirstName: "Dagobert", LastName: "Duck", DateOfBirth: "1999-12-17", UserId: 12 })
     var searchexpression = new RegExp(searchterm, "gi");
 
     allusers.forEach(participant => {
@@ -132,7 +103,7 @@ function search() {
             var row = document.createElement("tr");
             row.appendChild(createtd(fullname));
             row.appendChild(createtd(participant.DateOfBirth))
-            row.onclick = function () {
+            row.onclick = function() {
                 document.getElementById("participantsearchbox").value = fullname;
                 document.getElementById("participantsearcheduserid").value = participant.UserId;
                 cleartable(resultfield);
