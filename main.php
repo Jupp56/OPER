@@ -20,7 +20,7 @@ require_once('auth.php');
 <body>
     <div id="container">
         <?php
-            include 'userdata.php';
+        include 'userdata.php';
         ?>
 
         <div id="addbutton" class="row mt-5 mr-5">
@@ -49,6 +49,28 @@ require_once('auth.php');
             </div>
         </div>
 
+        <div id="deletecourseoverlay" class="overlay">
+            <div class="overlay-content">
+                <form action="deletecourse.php">
+                    <div class="row">
+                        <div class="col">
+                            <h2>Kurs löschen</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Kurs <strong> und alle Ergebnisse </strong> wirklich endgültig löschen
+                        </div>
+                    </div>
+                    <input id="deletecoursecourseid" class="hidden" readonly>
+                    <div class="row mt-4 mb-0 pb-0">
+                        <div class="col"><button id="deletecourseabort" class="float-left button-alt" type="button" onclick="hidedeletecourseoverlay()">Abbrechen</button></div>
+                        <div class="col"><button id="deletecourseconfirm" class="float-right button-warn" type="submit">Kurs löschen</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <div id="accountlist" class="container-fluid mt-3">
 
             <div class="row flex-xl-nowrap ml-5 mt-2 mr-5">
@@ -58,6 +80,7 @@ require_once('auth.php');
                             <thead>
                                 <th>Kurs</th>
                                 <th>Teilnehmerzahl</th>
+                                <th>Entfernen</th>
                             </thead>
                             <tbody id="tablebody">
                                 <tr>

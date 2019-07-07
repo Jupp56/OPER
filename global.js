@@ -28,3 +28,19 @@ function createth(thvalue) {
     cell.appendChild(celltext);
     return cell;
 }
+
+function createbutton(text, buttonclass, onclickaction, onclickparameter) {
+    var cell = document.createElement("td");
+    var button = document.createElement("button");
+
+    button.value = text;
+    button.textContent = text;
+    button.className = buttonclass;
+
+    button.onclick = function() {
+        onclickaction(onclickparameter);
+    };
+
+    cell.appendChild(button);
+    return cell;
+}

@@ -40,7 +40,7 @@ function fillarr(array) {
         row.onclick = createClickHandler(array, i);
         row.appendChild(createtd(array[i].Course));
         row.appendChild(createtd(array[i].Participants));
-        row.appendChild(createtd(array[i].Participants));
+        row.appendChild(createbutton("X", "button-warn aboveall", deletecourse, array[i].Course));
         tablebody.appendChild(row);
     }
 }
@@ -56,4 +56,17 @@ function showcourseoverlay() {
 
 function hidecourseoverlay() {
     document.getElementById("coursecreateoverlay").style.width = "0%";
+}
+
+function deletecourse(courseid) {
+    showdeletecourseoverlay();
+    document.getElementById("deletecoursecourseid").value = courseid;
+}
+
+function showdeletecourseoverlay() {
+    document.getElementById("deletecourseoverlay").style.width = "100%";
+}
+
+function hidedeletecourseoverlay() {
+    document.getElementById("deletecourseoverlay").style.width = "0%";
 }

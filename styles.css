@@ -131,3 +131,7 @@ tbody tr {
 input .disabled {
     background-color: rgb(163, 163, 163);
 }
+
+.aboveall {
+    z-index: 1;
+}
