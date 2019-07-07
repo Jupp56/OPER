@@ -97,7 +97,6 @@ function sendcreateparticipant() {
 
 function resetcreateparticipant() {
     document.getElementById("createaccountform").reset();
-    document.getElementById("Password-Create").value = Math.random().toString(36).slice(-8);
 }
 
 function deleteparticipant() {
