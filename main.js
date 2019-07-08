@@ -31,14 +31,14 @@ function fillarr(array) {
         var row = document.createElement("tr");
         var createClickHandler =
             function(array, i) {
-                return function() {
+                return function(event) {
                     window.location.href = baseurl + '/course.php?course=' + array[i].Course;
                     //What happens, when you click on a row
                 };
             };
-        row.onclick = createClickHandler(array, i);
-        row.appendChild(createtd(array[i].CourseName));
-        row.appendChild(createtd(array[i].CourseId));
+
+        row.appendChild(createtd(array[i].CourseName, createClickHandler(array, i)));
+        row.appendChild(createtd(array[i].CourseId, createClickHandler(array, i)));
         row.appendChild(createbutton("X", "button-warn aboveall", deletecourse, array[i].Course));
         tablebody.appendChild(row);
     }

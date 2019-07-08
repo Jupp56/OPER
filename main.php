@@ -59,7 +59,7 @@ require_once('auth.php');
                     </div>
                     <div class="row">
                         <div class="col">
-                            Kurs <strong> und alle Ergebnisse </strong> wirklich endgültig löschen
+                            Kurs <strong> und alle Ergebnisse </strong> wirklich endgültig löschen?
                         </div>
                     </div>
                     <input id="deletecoursecourseid" class="hidden" readonly>
