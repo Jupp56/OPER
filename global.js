@@ -1,3 +1,5 @@
+var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
+
 function sendsyncgetrequest(url) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url, false); //true for asynchronous request

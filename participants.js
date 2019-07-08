@@ -66,7 +66,7 @@ function fillarr(array) {
 }
 
 function showparticipantresults(participantid) {
-    window.location.href = "/participantresults.php?ParticipantId=" + participantid;
+    window.location.href = baseurl + "/participantresults.php?ParticipantId=" + participantid;
 }
 
 function cleartable(table) {
