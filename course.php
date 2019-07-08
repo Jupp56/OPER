@@ -51,7 +51,7 @@
 
         <div id="addparticipantoverlay" class="overlay">
             <div class="overlay-content">
-                <form action="addparticipanttocourse.php">
+                <form action="addparticipanttocourse.php" method="post">
                     <div class="row">
                         <div class="col">
                             <h2>Teilnehmer hinzufügen</h2>
@@ -65,7 +65,7 @@
                             <div class="row">
                                 <div class="col">
                                     <input id="participantsearchbox" type="text" oninput="search()">
-                                    <input id="participantsearchedcourseid" class="hidden" type="text" name="ParticipantId">
+                                    <input id="participantsearchedcourseid" class="hidden" type="text" name="CourseId">
                                     <input id="participantsearchedparticipantid" class="hidden" type="text" name="ParticipantId">
                                 </div>
                             </div>
