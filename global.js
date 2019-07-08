@@ -7,6 +7,14 @@ function sendsyncgetrequest(url) {
     return xmlHttp.responseText;
 }
 
+function sendsyncpostrequest(url, data) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("POST", url, false); //true for asynchronous request
+
+    xmlHttp.send(data);
+    return xmlHttp.responseText;
+}
+
 function createtd(tdvalue, onclick, style) {
     var cell = document.createElement("td");
     var cellText = document.createTextNode(tdvalue);

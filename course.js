@@ -104,13 +104,14 @@ function changeoccured() {
 function save() {
     unsaved = false;
     var table = document.getElementById("participanttable");
+    var values = new Set();
     for (var i = 0; i < table.rows.length; i++) {
         var row = table.rows.item(i).cells;
-        for (var j = 0; j < row.length; j++) {
-            alert(row.item(j).innerHTML);
-        }
-
+        
+        values.add({RelationId: row.items(7), Grade: row.items(5)});
     }
+    var datastring = JSON.stringify(values);
+    sendsyncpostrequest(baseurl + '/setgrades?CourseId=' + coursename, datastring);
     //TODO: Read list and send to server - wait for confirmation, else alert user that data is unsaved
 }
 
