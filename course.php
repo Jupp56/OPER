@@ -51,7 +51,7 @@
 
         <div id="addparticipantoverlay" class="overlay">
             <div class="overlay-content">
-                <form action="addparticipant.php">
+                <form action="addparticipanttocourse.php">
                     <div class="row">
                         <div class="col">
                             <h2>Teilnehmer hinzufügen</h2>
