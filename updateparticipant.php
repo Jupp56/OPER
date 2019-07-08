@@ -7,20 +7,14 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-$stmt = $mysqli->prepare("UPDATE Users SET Username=?,FirstName=?,LastName=?,DateOfBirth=?,Mail=? WHERE Username=?");
-$stmt->bind_param("ssssss", $username, $firstname, $lastname, $dateofbirth, $mail, $originalusername);
-$username = $_POST['Username'];
+$stmt = $mysqli->prepare("UPDATE Participants SET FirstName=?,LastName=?,DateOfBirth=? WHERE Id=?");
+$stmt->bind_param("sssi", $firstname, $lastname, $dateofbirth, $id);
 $firstname = $_POST['FirstName'];
 $lastname = $_POST['LastName'];
 $dateofbirth = $_POST['DateOfBirth'];
-$mail = $_POST['Mail'];
-$originalusername = $_POST['OriginalUsername'];
+$id = $_POST['ParticipantId'];
 if ($stmt->execute()){
     $count = $stmt->affected_rows;
-    while ($stmt->fetch()){ };
-    $stmt = $mysqli->prepare("UPDATE UserCourses SET Username=? WHERE Username=?");
-    $stmt->bind_param("ss", $username, $originalusername);
-    $stmt->execute();
     
     header('Location: adminpanel.php?message=Successfully%20updated%20'.$count.'%20entries.');
     exit();
