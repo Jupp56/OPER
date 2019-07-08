@@ -14,7 +14,7 @@ $courseid = $_POST['CourseId'];
 if ($stmt->execute()){
     $count = $stmt->affected_rows;
     
-    header('Location: courses.php?message=Successfully%20updated%20'.$count.'%20entries.');
+    header('Location: main.php?message=Successfully%20updated%20'.$count.'%20entries.');
     exit();
 } else {
     header("HTTP/1.1 500 Internal Server Error");
