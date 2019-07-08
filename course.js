@@ -62,14 +62,14 @@ function showaddparticipant() {
 }
 
 function hideaddparticipant() {
-    cleartable(document.getElementById("searchresulttable"));
+    cleartable(document.getElementById("searchresulttable"), true);
     document.getElementById("addparticipantoverlay").style.width = "0%";
 }
 
 function search() {
     var table = document.getElementById("searchresulttable");
 
-    cleartable(table);
+    cleartable(table, true);
 
     var resultfield = document.getElementById("searchresults");
     var searchterm = document.getElementById("participantsearchbox").value;
@@ -91,7 +91,7 @@ function search() {
             row.onclick = function() {
                 document.getElementById("participantsearchbox").value = fullname;
                 document.getElementById("participantsearcheduserid").value = participant.UserId;
-                cleartable(resultfield);
+                cleartable(resultfield, true);
             }
             resultfield.appendChild(row);
         }

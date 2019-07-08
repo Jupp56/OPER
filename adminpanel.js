@@ -28,7 +28,7 @@ function getparticipants() {
 function fillarr(array) {
 
     var table = document.getElementById("usertable");
-    cleartable(document.getElementById("usertable"));
+    cleartable(document.getElementById("usertable"), false);
     var tablebody = document.getElementById("tablebody");
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");

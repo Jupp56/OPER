@@ -47,8 +47,13 @@ function createbutton(text, buttonclass, onclickaction, onclickparameter) {
     return cell;
 }
 
-function cleartable(table) {
-    for (var i = table.rows.length - 1; i > 0; i--) {
-        table.deleteRow(i);
-    }
+function cleartable(table, deletefirstrow) {
+    if (deletefirstrow)
+        for (var i = table.rows.length - 1; i >= 0; i--) {
+            table.deleteRow(i);
+        }
+    else
+        for (var i = table.rows.length - 1; i > 0; i--) {
+            table.deleteRow(i);
+        }
 }
