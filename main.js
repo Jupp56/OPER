@@ -37,8 +37,8 @@ function fillarr(array) {
                 };
             };
         row.onclick = createClickHandler(array, i);
-        row.appendChild(createtd(array[i].Course));
-        row.appendChild(createtd(array[i].Participants));
+        row.appendChild(createtd(array[i].CourseName));
+        row.appendChild(createtd(array[i].CourseId));
         row.appendChild(createbutton("X", "button-warn aboveall", deletecourse, array[i].Course));
         tablebody.appendChild(row);
     }
