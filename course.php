@@ -33,7 +33,6 @@
                                 <th>Vorname</th>
                                 <th>Nachname</th>
                                 <th>Geburtsdatum</th>
-                                <th>ID</th>
                                 <th>Note</th>
                                 <th>Entfernen</th>
                             </thead>
