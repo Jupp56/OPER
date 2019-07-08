@@ -36,7 +36,7 @@ function fillarr(array) {
         row.appendChild(createtd(i + 1));
         row.appendChild(createtd(array[i].FirstName));
         row.appendChild(createtd(array[i].LastName));
-        row.appendChild(createtd(array[i].Username));
+        row.appendChild(createtd(array[i].ParticipantId));
         row.appendChild(createtd(array[i].DateOfBirth));
         row.appendChild(createbutton("Ergebnisse", "button-alt", showparticipantresults, array[i].UserId));
 
