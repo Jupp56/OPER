@@ -8,10 +8,10 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('SELECT Hash, Salt, IsAdmin FROM Users WHERE Username LIKE BINARY ?');
+$stmt = $mysqli->prepare('SELECT Hash, Salt, IsAdmin, Id FROM Users WHERE Username LIKE BINARY ?');
 
 $stmt->bind_param("s", $username);
-$stmt->bind_result($hash, $salt, $isAdmin);
+$stmt->bind_result($hash, $salt, $isAdmin, $userid);
 
 $username = $_POST['Username'];
 
@@ -30,7 +30,7 @@ if ($stmt->execute()){
             header("HTTP/1.1 500 Internal Server Error");
             echo $stmt->error;
         }
-        setcookie("user", $username);
+        setcookie("user", $userid);
 		setcookie("token", $token);
         if ($isAdmin) header('Location: adminpanel.php');
         else header('Location: main.php');

@@ -8,9 +8,9 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('UPDATE Users SET Token=NULL WHERE Username LIKE BINARY ?');
-$stmt->bind_param("s", $username);
-$username = $_COOKIE['user'];
+$stmt = $mysqli->prepare('UPDATE Users SET Token=NULL WHERE Id=?');
+$stmt->bind_param("i", $userid);
+$userid = $_COOKIE['user'];
 
 if (!$stmt->execute()) {
     header("HTTP/1.1 500 Internal Server Error");
