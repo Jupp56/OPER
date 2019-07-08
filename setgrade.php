@@ -9,11 +9,11 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('UPDATE CourseParticipants SET Grade=? WHERE (CourseId=? AND (SELECT CreatorId FROM Courses WHERE Id=?)=?)');
-$stmt->bind_param("diii", $grade, $courseid, $courseid, $userid);
+$stmt = $mysqli->prepare('UPDATE CourseParticipants INNER JOIN Courses ON Courses.Id=CourseId SET Grade=? WHERE (CourseParticipants.Id=? AND CreatorId=?)');
+$stmt->bind_param("diii", $grade, $relationid, $userid);
 
 $grade = $_POST['Grade'];
-$courseid = $_POST['CourseId'];
+$relationid = $_POST['RelationId'];
 $userid = $_COOKIE['user'];
 
 if ($stmt->execute()){
