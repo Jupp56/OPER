@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('DELETE FROM Participants WHERE Id=? AND CreatorId=?');
+$stmt = $mysqli->prepare('DELETE FROM Participants WHERE (Id=? AND CreatorId=?)');
 $stmt->bind_param("ii", $id, $userid);
 $id = $_GET['CourseId'];
 $userid = $_COOKIE['user'];
