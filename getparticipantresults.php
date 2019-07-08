@@ -13,6 +13,8 @@ $stmt = $mysqli->prepare('SELECT courses.Name AS CourseName, Grade FROM coursepa
 $stmt->bind_param("i", $_GET['ParticipantId']);
 $stmt->bind_result($coursename, $grade);
 
+$stmt->execute();
+
 $users = array();
 
 while ($stmt->fetch()){
