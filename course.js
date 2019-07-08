@@ -107,7 +107,7 @@ function save() {
     var values = new Set();
     for (var i = 1; i < table.rows.length; i++) {
         values.add({ RelationId: table.rows[i].cells[6].innerHTML, Grade: table.rows[i].cells[4].children[0].value });
-        alert(values[i-1].RelationId);bu
+        alert(values[i-1].RelationId);
     }
 
     var datastring = JSON.stringify(values);
