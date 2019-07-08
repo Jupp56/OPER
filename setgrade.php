@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('UPDATE CourseParticipants SET Grade=? WHERE CourseId=? AND (SELECT CreatorId FROM Courses WHERE Id=?)=?');
+$stmt = $mysqli->prepare('UPDATE CourseParticipants SET Grade=? WHERE (CourseId=? AND (SELECT CreatorId FROM Courses WHERE Id=?)=?)');
 $stmt->bind_param("diii", $grade, $courseid, $courseid, $userid);
 
 $grade = $_POST['Grade'];
