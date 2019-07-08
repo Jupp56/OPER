@@ -1,11 +1,11 @@
 window.onload = getcourses;
-var username = "testuser"; //TODO: load dynamically
+var userid = readCookie("user");
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 function getcourses() {
 
     var xmlHttp = new XMLHttpRequest();
-    var url = baseurl + "/getcourses.php?user=" + username;
+    var url = baseurl + "/getcourses.php?user=" + userid;
 
     xmlHttp.open("GET", url, true); //true for asynchronous request
 
