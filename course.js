@@ -74,6 +74,7 @@ function search() {
     try {
         var allusers = JSON.parse(sendgetrequest(baseurl + '/getparticipants.php'));
     } catch (e) {
+        console.log("could not get participants to search.")
         return;
     }
     //test data
