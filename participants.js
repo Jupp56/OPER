@@ -38,7 +38,7 @@ function fillarr(array) {
         row.appendChild(createtd(array[i].LastName));
         row.appendChild(createtd(array[i].Id));
         row.appendChild(createtd(array[i].DateOfBirth));
-        row.appendChild(createbutton("Ergebnisse", "button-alt", showparticipantresults, array[i].UserId));
+        row.appendChild(createbutton("Ergebnisse", "button-alt", showparticipantresults, array[i].Id));
 
         tablebody.appendChild(row);
     }
