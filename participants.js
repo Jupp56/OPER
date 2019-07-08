@@ -48,11 +48,6 @@ function showparticipantresults(participantid) {
     window.location.href = baseurl + "/participantresults.php?ParticipantId=" + participantid;
 }
 
-function cleartable(table) {
-    for (var i = table.rows.length - 1; i > 0; i--) {
-        table.deleteRow(i);
-    }
-}
 
 
 function getdetails() {
