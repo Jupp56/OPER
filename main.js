@@ -24,9 +24,9 @@ function getcourses() {
 
 function fillarr(array) {
 
-    var table = document.getElementById("usertable");
+    var table = document.getElementById("coursetable");
     table.deleteRow(1);
-    var tablebody = document.getElementById("tablebody");
+    var tablebody = document.getElementById("coursetablebody");
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
         var createClickHandler =
