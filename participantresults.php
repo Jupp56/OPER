@@ -25,7 +25,9 @@ require_once('adminauth.php');
         <div class="row ml-5 mt-2">
             <div class="col"><a href="adminpanel.php"><button class="button-alt">Benutzerverwaltung</button></a></div>
         </div>
-
+        <div id="buttons" class="row ml-5 mt-5 mr-5">
+            <div class="col"><button class="float-left" onclick="back()">Zurück</button><button class="ml-2 float-left" onclick="save()">Sichern</button></div>
+        </div>
 
         <div id="accountlist" class="container-fluid mt-5">
             <div class="row flex-xl-nowrap ml-5 mt-2 mr-5">

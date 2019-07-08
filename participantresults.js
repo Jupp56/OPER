@@ -1,7 +1,7 @@
 var participantid = window.location.href.split('=')[1]; //TODO: schöner!!!
 
 function getparticipantresults() {
-    fillarr(new Set());
+
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getparticipantresults.php?ParticipantId=" + participantid;
 
@@ -25,10 +25,7 @@ function getparticipantresults() {
 }
 
 function fillarr(array) {
-    array = [
-        { CourseName: "Tauchen", Grade: 1.7 },
-        { CourseName: "Kleiderschwimmen", Grade: 4.0 }
-    ]
+
     var table = document.getElementById("participanttable");
     cleartable(document.getElementById("participanttable"));
     var tablebody = document.getElementById("participanttablebody");
