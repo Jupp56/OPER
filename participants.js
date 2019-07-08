@@ -2,7 +2,7 @@ var currentaccount;
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 function getparticipants() {
-
+    fillarr(new Set());
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getparticipants.php";
 

@@ -1,7 +1,7 @@
 var participantid = window.location.href.split('=')[1]; //TODO: schöner!!!
 
 function getparticipantresults() {
-
+    fillarr(new Set());
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getparticipantresults.php?ParticipantId=" + participantid;
 
