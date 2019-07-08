@@ -36,7 +36,7 @@ function fillarr(array) {
         row.appendChild(createtd(array[i].LastName));
         row.appendChild(createtd(array[i].DateOfBirth));
         row.appendChild(createinput(array[i].Grade));
-        row.appendChild(createbutton("X", "button-warn", deleteaccountgrade, array[i].Id));
+        row.appendChild(createbutton("X", "button-warn", deleteaccountgrade, array[i].RelationId));
 
         tablebody.appendChild(row);
     }
