@@ -68,16 +68,16 @@ function hidesingleparticipant() {
 }
 
 function showcreateparticipant() {
-    document.getElementById("createaccountwindow").style.width = "100%";
+    document.getElementById("createparticipantwindow").style.width = "100%";
 }
 
 function hidecreateparticipant() {
-    document.getElementById("createaccountwindow").style.width = "0%";
+    document.getElementById("createparticipantwindow").style.width = "0%";
 }
 
 function sendcreateparticipant() {
     hidecreateparticipant();
-    document.getElementById("createaccountform").submit();
+    document.getElementById("createparticipantform").submit();
     resetcreateaccount();
     getparticipants();
 }

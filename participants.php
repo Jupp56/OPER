@@ -125,8 +125,8 @@ require_once('adminauth.php');
             </div>
         </div>
 
-        <div id="createaccountwindow" class="overlay">
-            <form id="createaccountform" action="createparticipant.php" method="post">
+        <div id="createparticipantwindow" class="overlay">
+            <form id="createparticipantform" action="addparticipant.php" method="post">
                 <div class="overlay-content">
                     <div class="row">
                         <div class="col">
