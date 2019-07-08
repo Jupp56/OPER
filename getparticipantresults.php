@@ -16,10 +16,10 @@ $stmt->bind_result($coursename, $grade);
 $users = array();
 
 while ($stmt->fetch()){
-    $users[] = array(
+    array_push($users, array(
         "CourseName" => $coursename,
         "Grade" => $grade
-    );
+    ));
 }
 echo json_encode($users);
 ?>
