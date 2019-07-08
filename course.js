@@ -89,7 +89,8 @@ function search() {
             row.appendChild(createtd(participant.DateOfBirth))
             row.onclick = function() {
                 document.getElementById("participantsearchbox").value = fullname;
-                document.getElementById("participantsearcheduserid").value = participant.Id;
+                document.getElementById("participantsearchedcourseid").value = coursename;
+                document.getElementById("participantsearchedparticipantid").value = participant.Id;
                 cleartable(resultfield, true);
             }
             resultfield.appendChild(row);

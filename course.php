@@ -65,7 +65,8 @@
                             <div class="row">
                                 <div class="col">
                                     <input id="participantsearchbox" type="text" oninput="search()">
-                                    <input id="participantsearcheduserid" class="hidden" type="text" name="UserId">
+                                    <input id="participantsearchedcourseid" class="hidden" type="text" name="ParticipantId">
+                                    <input id="participantsearchedparticipantid" class="hidden" type="text" name="ParticipantId">
                                 </div>
                             </div>
                             <div class="row">
