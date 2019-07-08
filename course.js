@@ -107,10 +107,12 @@ function save() {
     var values = new Set();
     for (var i = 0; i < table.rows.length; i++) {
         var row = table.rows.item(i).cells;
-        
         values.add({RelationId: row.item(7), Grade: row.item(5)});
+        alert("relationid: " + row.item(7));
     }
+    alert("grade:" + values[0].Grade);
     var datastring = JSON.stringify(values);
+    alert("datastring:" + datastring);
     sendsyncpostrequest(baseurl + '/setgrades?CourseId=' + coursename, datastring);
     //TODO: Read list and send to server - wait for confirmation, else alert user that data is unsaved
 }
