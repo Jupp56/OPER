@@ -9,15 +9,17 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('SELECT Name FROM Courses WHERE CreatorId=?');
+$stmt = $mysqli->prepare('SELECT Name, Id FROM Courses WHERE CreatorId=?');
 $stmt->bind_param('i', $userid);
 $userid = $_COOKIE['user'];
-$stmt->bind_result($row);
+$stmt->bind_result($name, $id);
+
+$stmt->execute();
 
 $users = array();
 
 while ($stmt->fetch()){
-    $users[] = array("CourseName" => $row);
+    array_push($users, array("CourseName" => $name, "CourseId" => $id));
 }
 echo json_encode($users);
 ?>
