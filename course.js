@@ -108,7 +108,7 @@ function save() {
     for (var i = 0; i < table.rows.length; i++) {
         var row = table.rows.item(i).cells;
         
-        values.add({RelationId: row.items(7), Grade: row.items(5)});
+        values.add({RelationId: row.item(7), Grade: row.item(5)});
     }
     var datastring = JSON.stringify(values);
     sendsyncpostrequest(baseurl + '/setgrades?CourseId=' + coursename, datastring);
