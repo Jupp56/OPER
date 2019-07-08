@@ -9,9 +9,9 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('SELECT Courses.Name, FirstName, LastName, DateOfBirth, CourseParticipants.Id FROM CourseParticipants INNER JOIN Participants ON Participants.Id=ParticipantId INNER JOIN Courses ON Courses.Id=CourseId WHERE CourseId=?');
+$stmt = $mysqli->prepare('SELECT Courses.Name, FirstName, LastName, DateOfBirth, CourseParticipants.Id, Grade FROM CourseParticipants INNER JOIN Participants ON Participants.Id=ParticipantId INNER JOIN Courses ON Courses.Id=CourseId WHERE CourseId=?');
 $stmt->bind_param("i", $_GET['CourseId']);
-$stmt->bind_result($coursename, $firstname, $lastname, $dateofbirth, $relationid);
+$stmt->bind_result($coursename, $firstname, $lastname, $dateofbirth, $relationid, $grade);
 
 $stmt->execute();
 
@@ -23,7 +23,8 @@ while ($stmt->fetch()){
         "FirstName" => $firstname,
         "LastName" => $lastname,
         "DateOfBirth" => $dateofbirth,
-        "RelationId" => $relationid
+        "RelationId" => $relationid,
+        "Grade" => $grade,
     ));
 }
 echo json_encode($users);
