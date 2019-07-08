@@ -105,7 +105,7 @@ function deleteparticipant() {
 
 function deleteparticipantconfirm() {
     var url = baseurl + "/deleteuser.php?user=" + currentaccount;
-    alert(sendgetrequest(url).toString());
+    alert(sendsyncgetrequest(url).toString());
     document.getElementById("deletewindow").style.width = "0%";
     getusers();
 }
@@ -114,16 +114,6 @@ function deleteparticipantdeny() {
     document.getElementById("deletewindow").style.width = "0%";
 }
 
-function sendgetrequest(url) {
-    var xmlHttp = new XMLHttpRequest();
-
-    xmlHttp.open("GET", url, false); //true for asynchronous request
-
-
-    xmlHttp.send(null);
-
-    return xmlHttp.status;
-}
 
 function logout() {
     window.location.href = 'logout.php';
