@@ -7,7 +7,7 @@ var unsaved = false;
 function getdata() {
 
     var xmlHttp = new XMLHttpRequest();
-    var url = baseurl + "/getcourse.php?course=" + coursename;
+    var url = baseurl + "/getcourse.php?CourseId=" + coursename;
 
     xmlHttp.open("GET", url, true); //true for asynchronous request
 
