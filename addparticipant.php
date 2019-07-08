@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('INSERT INTO Participants FirstName, LastName, DateOfBirth VALUES (?, ?, ?)');
+$stmt = $mysqli->prepare('INSERT INTO Participants (FirstName, LastName, DateOfBirth) VALUES (?, ?, ?)');
 $stmt->bind_param("sss", $firstname, $lastname, $dateofbirth);
 
 $firstname = $_POST['FirstName'];
