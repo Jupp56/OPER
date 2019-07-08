@@ -105,7 +105,7 @@ function save() {
     unsaved = false;
     var table = document.getElementById("participanttable");
     for (var i = 0; i < table.rows.length; i++) {
-        var row = myTab.rows.item(i).cells;
+        var row = table.rows.item(i).cells;
         for (var j = 0; j < row.length; j++) {
             alert(row.item(j));
         }
