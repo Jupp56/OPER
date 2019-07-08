@@ -17,7 +17,7 @@ $stmt->bind_result($row);
 $users = array();
 
 while ($stmt->fetch()){
-    $users[] = array("CourseName" => $row);
+    array_push($users, array("CourseName" => $row));
 }
 echo json_encode($users);
 ?>
