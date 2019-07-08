@@ -71,13 +71,13 @@ function search() {
 
     var resultfield = document.getElementById("searchresults");
     var searchterm = document.getElementById("participantsearchbox").value;
-    // try {
-    //     var allusers = JSON.parse(sendgetrequest(baseurl + '/getallusers.php'));
-    // } catch (e) {
-    //     return;
-    // }
+    try {
+        var allusers = JSON.parse(sendgetrequest(baseurl + '/getparticipants.php'));
+    } catch (e) {
+        return;
+    }
     //test data
-    var allusers = new Array({ FirstName: "Martin", LastName: "Fowler", DateOfBirth: "1989-03-23", UserId: 23 }, { FirstName: "Max", LastName: "Mustermann", DateOfBirth: "2000-08-12", UserId: 26 }, { FirstName: "Paul", LastName: "Lambert", DateOfBirth: "1924-07-03", UserId: 4 }, { FirstName: "Jeff", LastName: "Davis", DateOfBirth: "1955-02-20", UserId: 236 }, { FirstName: "Dagobert", LastName: "Duck", DateOfBirth: "1999-12-17", UserId: 12 })
+    //var allusers = new Array({ FirstName: "Martin", LastName: "Fowler", DateOfBirth: "1989-03-23", UserId: 23 }, { FirstName: "Max", LastName: "Mustermann", DateOfBirth: "2000-08-12", UserId: 26 }, { FirstName: "Paul", LastName: "Lambert", DateOfBirth: "1924-07-03", UserId: 4 }, { FirstName: "Jeff", LastName: "Davis", DateOfBirth: "1955-02-20", UserId: 236 }, { FirstName: "Dagobert", LastName: "Duck", DateOfBirth: "1999-12-17", UserId: 12 })
     var searchexpression = new RegExp(searchterm, "gi");
 
     allusers.forEach(participant => {
@@ -88,7 +88,7 @@ function search() {
             row.appendChild(createtd(participant.DateOfBirth))
             row.onclick = function() {
                 document.getElementById("participantsearchbox").value = fullname;
-                document.getElementById("participantsearcheduserid").value = participant.UserId;
+                document.getElementById("participantsearcheduserid").value = participant.Id;
                 cleartable(resultfield, true);
             }
             resultfield.appendChild(row);
