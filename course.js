@@ -42,11 +42,8 @@ function fillarr(array) {
     }
 }
 
-
-
-
 function deleteaccountgrade(participantid) {
-    sendsyncgetrequest(baseurl + "/deleteaccountgrade.php?Course=" + coursename + "&ParticipantId=" + participantid)
+    sendsyncgetrequest(baseurl + "/removeparticipantfromcourse.php?RelationId=" + participantid)
     getdata();
 }
 
