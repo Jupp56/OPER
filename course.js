@@ -11,7 +11,7 @@ function getdata() {
 
     xmlHttp.open("GET", url, true); //true for asynchronous request
 
-    xmlHttp.onload = function(e) {
+    xmlHttp.onload = function (e) {
         if (xmlHttp.status === 200) {
             var result = xmlHttp.responseText;
             console.log(xmlHttp.responseText);
@@ -26,7 +26,7 @@ function getdata() {
 
 function fillarr(array) {
 
-    var table = document.getElementById("usertable");
+    var table = document.getElementById("participanttable");
     cleartable(table, false);
     var tablebody = document.getElementById("tablebody");
     for (var i = 0; i < array.length; i++) {
@@ -37,7 +37,7 @@ function fillarr(array) {
         row.appendChild(createtd(array[i].DateOfBirth));
         row.appendChild(createinput(array[i].Grade));
         row.appendChild(createbutton("X", "button-warn", deleteaccountgrade, array[i].RelationId));
-
+        row.appendChild(createtd(array[i].RelationId, false, "hidden"));
         tablebody.appendChild(row);
     }
 }
@@ -83,7 +83,7 @@ function search() {
             var row = document.createElement("tr");
             row.appendChild(createtd(fullname));
             row.appendChild(createtd(participant.DateOfBirth))
-            row.onclick = function() {
+            row.onclick = function () {
                 document.getElementById("participantsearchbox").value = fullname;
                 document.getElementById("participantsearchedcourseid").value = coursename;
                 document.getElementById("participantsearchedparticipantid").value = participant.Id;
@@ -103,6 +103,14 @@ function changeoccured() {
 
 function save() {
     unsaved = false;
+    var table = document.getElementById("participanttable");
+    for (var i = 0; i < table.rows.length; i++) {
+        var row = myTab.rows.item(i).cells;
+        for (var j = 0; j < row.length; j++) {
+            alert(row.item(j));
+        }
+
+    }
     //TODO: Read list and send to server - wait for confirmation, else alert user that data is unsaved
 }
 

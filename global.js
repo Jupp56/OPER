@@ -7,11 +7,12 @@ function sendsyncgetrequest(url) {
     return xmlHttp.responseText;
 }
 
-function createtd(tdvalue, onclick) {
+function createtd(tdvalue, onclick, style) {
     var cell = document.createElement("td");
     var cellText = document.createTextNode(tdvalue);
     cell.appendChild(cellText);
     if (onclick) cell.onclick = onclick;
+    if(style) cell.style = style;
     return cell;
 }
 

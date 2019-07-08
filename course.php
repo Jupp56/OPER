@@ -27,7 +27,7 @@
             <div class="row flex-xl-nowrap ml-5 mt-2 mr-5">
                 <main class="col-12" role="main">
                     <div class="table-responsive">
-                        <table id="usertable" class="table table-striped table-hover">
+                        <table id="participanttable" class="table table-striped table-hover">
                             <thead>
                                 <th>#</th>
                                 <th>Vorname</th>
