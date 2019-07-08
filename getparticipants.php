@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->query('SELECT * FROM Participants');
+$stmt = $mysqli->query('SELECT * FROM Participants ORDER BY LastName');
 
 $users = array();
 
