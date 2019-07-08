@@ -2,7 +2,7 @@ var currentaccount;
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 function getparticipants() {
-    fillarr(new Set());
+
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getparticipants.php";
 
@@ -27,32 +27,11 @@ function getparticipants() {
 
 function fillarr(array) {
 
-    array = [
-        { FirstName: "Anita", LastName: "Breitacher", DateOfBirth: "1998-07-03", UserId: 1542 },
-        { FirstName: "Reinhard", LastName: "Mey", DateOfBirth: "1967-09-01", UserId: 99 }
-    ]
-
     var table = document.getElementById("participanttable");
     cleartable(table);
     var tablebody = document.getElementById("participanttablebody");
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
-
-        var createClickHandler =
-            function(dataset) {
-                return function() {
-                    showsingleaccount();
-
-                    document.getElementById("FirstName-Single").value = dataset.FirstName;
-                    document.getElementById("LastName-Single").value = dataset.LastName;
-                    document.getElementById("DateOfBirth-Single").value = dataset.DateOfBirth;
-                    document.getElementById("Username-Single").value = dataset.UserId;
-                    currentaccount = thisusername;
-                    //Zu bearbeitende Daten holen und anzeigen
-                };
-            };
-
-        row.onclick = createClickHandler(array[i]);
 
         row.appendChild(createtd(i + 1));
         row.appendChild(createtd(array[i].FirstName));
