@@ -107,11 +107,14 @@ function save() {
     var values = new Set();
     for (var i = 1; i < table.rows.length; i++) {
         var row = table.rows.item(i).cells;
-        values.add({ RelationId: row.cells[6].innerHTML, Grade: row.cells[4].children[0].value });
+        values.add({ RelationId: table.rows[i].cells[6].innerHTML, Grade: table.rows[i].cells[4].children[0].value });
+
     }
+
     var datastring = JSON.stringify(values);
+    
     sendsyncpostrequest(baseurl + '/setgrades?CourseId=' + coursename, datastring);
-    //TODO: wait for confirmation, else alert user that data is unsaved
+    //TODO: Read list and send to server - wait for confirmation, else alert user that data is unsaved
 }
 
 function back() {
