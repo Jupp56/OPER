@@ -41,7 +41,7 @@ function fillarr(array) {
 }
 
 function back() {
-    window.location.href = baseurl + 'participants.php';
+    window.location.href = baseurl + '/participants.php';
 }
 
 window.onload = getparticipantresults;
