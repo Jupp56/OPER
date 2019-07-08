@@ -51,7 +51,7 @@ require_once('auth.php');
 
         <div id="deletecourseoverlay" class="overlay">
             <div class="overlay-content">
-                <form action="deletecourse.php">
+                <form action="deletecourse.php" method="get">
                     <div class="row">
                         <div class="col">
                             <h2>Kurs löschen</h2>
@@ -62,10 +62,10 @@ require_once('auth.php');
                             Kurs <strong> und alle Ergebnisse </strong> wirklich endgültig löschen?
                         </div>
                     </div>
-                    <input id="deletecoursecourseid" class="hidden" readonly>
+                    <input id="deletecoursecourseid" class="hidden" name="CourseId" readonly>
                     <div class="row mt-4 mb-0 pb-0">
                         <div class="col"><button id="deletecourseabort" class="float-left button-alt" type="button" onclick="hidedeletecourseoverlay()">Abbrechen</button></div>
-                        <div class="col"><button id="deletecourseconfirm" class="float-right button-warn" type="submit">Kurs löschen</button></div>
+                        <div class="col"><button id="deletecourseconfirm" class="float-right button-warn" type="submit" onclick="hidedeletecourseoverlay()">Kurs löschen</button></div>
                     </div>
                 </form>
             </div>
