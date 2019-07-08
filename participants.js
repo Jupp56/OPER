@@ -76,7 +76,7 @@ function hidecreateparticipant() {
 }
 
 function sendcreateparticipant() {
-    hidecreateaccount();
+    hidecreateparticipant();
     document.getElementById("createaccountform").submit();
     resetcreateaccount();
     getparticipants();
