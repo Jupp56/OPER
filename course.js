@@ -106,6 +106,7 @@ function save() {
     var table = document.getElementById("participanttable");
     var values = new Set();
     for (var i = 1; i < table.rows.length; i++) {
+        alert("relationid: " + table.rows[i].cells[6].innerHTML + " \ngrade: " + table.rows[i].cells[4].children[0].value  );
         values.add({ RelationId: table.rows[i].cells[6].innerHTML, Grade: table.rows[i].cells[4].children[0].value });
         alert(values[i-1].RelationId);
     }
