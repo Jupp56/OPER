@@ -1,6 +1,6 @@
 <?php
 require_once("constants.php");
-require_once("auth.php");
+require_once("adminauth.php");
 
 $mysqli = new mysqli(MYSQLI_IP, MYSQLI_USER, MYSQLI_PASS, MYSQLI_DB, MYSQLI_PORT);
 
@@ -9,14 +9,11 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('SELECT * FROM Courses WHERE CreatorId=?');
-$stmt->bind_param('i', $userid);
-$userid = $_COOKIE['user'];
-$stmt->bind_result($row);
+$stmt = $mysqli->query('SELECT * FROM Courses');
 
 $users = array();
 
-while ($stmt->fetch()){
+while ($row = $stmt->fetch_assoc()){
     $users[] = $row;
 }
 echo json_encode($users);
