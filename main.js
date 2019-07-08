@@ -32,14 +32,14 @@ function fillarr(array) {
         var createClickHandler =
             function(array, i) {
                 return function(event) {
-                    window.location.href = baseurl + '/course.php?course=' + array[i].Course;
+                    window.location.href = baseurl + '/course.php?course=' + array[i].CourseId;
                     //What happens, when you click on a row
                 };
             };
 
         row.appendChild(createtd(array[i].CourseName, createClickHandler(array, i)));
         row.appendChild(createtd(array[i].CourseId, createClickHandler(array, i)));
-        row.appendChild(createbutton("X", "button-warn aboveall", deletecourse, array[i].Course));
+        row.appendChild(createbutton("X", "button-warn aboveall", deletecourse, array[i].CourseId));
         tablebody.appendChild(row);
     }
 }
