@@ -9,15 +9,12 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('INSERT INTO Participants (FirstName, LastName, DateOfBirth) VALUES (?, ?, ?)');
-$stmt->bind_param("sss", $firstname, $lastname, $dateofbirth);
-
-$firstname = $_POST['FirstName'];
-$lastname = $_POST['LastName'];
-$dateofbirth = $_POST['DateOfBirth'];
+$stmt = $mysqli->prepare('DELETE FROM Participants WHERE Id=?');
+$stmt->bind_param("i", $id);
+$id = $_GET['ParticipantId'];
 
 if ($stmt->execute()){
-    header("Location: participants.php");
+    header("Location: participants.php?message=Successfully%20deleted");
     exit();
 } else {
     header("HTTP/1.1 500 Internal Server Error");

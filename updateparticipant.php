@@ -16,7 +16,7 @@ $id = $_POST['ParticipantId'];
 if ($stmt->execute()){
     $count = $stmt->affected_rows;
     
-    header('Location: adminpanel.php?message=Successfully%20updated%20'.$count.'%20entries.');
+    header('Location: participants.php?message=Successfully%20updated%20'.$count.'%20entries.');
     exit();
 } else {
     header("HTTP/1.1 500 Internal Server Error");
