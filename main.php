@@ -39,7 +39,7 @@ require_once('auth.php');
                     </div>
                     <div class="row mt-4">
                         <div class="col">Name des Kurses:</div>
-                        <div class="col"><input class="float-right" type="text" name="Name"></div>
+                        <div class="col"><input class="float-right" type="text" name="CourseName"></div>
                     </div>
                     <div class="row mt-4">
                         <div class="col"><button class="float-left button-alt" type="button" onclick="hidecourseoverlay()">Abbrechen</button></div>
