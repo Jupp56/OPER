@@ -107,7 +107,7 @@ function save() {
     for (var i = 0; i < table.rows.length; i++) {
         var row = table.rows.item(i).cells;
         for (var j = 0; j < row.length; j++) {
-            alert(row.item(j));
+            alert(row.item(j).innerHTML);
         }
 
     }
