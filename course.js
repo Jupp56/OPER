@@ -1,11 +1,10 @@
 window.onload = getdata;
-var username = "testuser"; //TODO: load dynamically
+var userid = readCookie("user");
 var coursename = window.location.href.split('=')[1]; //TODO: schöner!!!
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 var unsaved = false;
 
 function getdata() {
-    fillarr(null);
 
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getcoursedata.php?course=" + coursename;
@@ -26,7 +25,6 @@ function getdata() {
 }
 
 function fillarr(array) {
-    var array = new Array({ FirstName: "John", LastName: "Doe", DateOfBirth: "2017-05-03", ID: "1729", Grade: 2.7 });
 
     var table = document.getElementById("usertable");
     table.deleteRow(1);
