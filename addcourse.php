@@ -16,7 +16,7 @@ $coursename = $_GET['CourseName'];
 $userid = $_COOKIE['user'];
 
 if ($stmt->execute()){
-    header("Location: courses.php");
+    header("Location: main.php");
     exit();
 } else {
     header("HTTP/1.1 500 Internal Server Error");
