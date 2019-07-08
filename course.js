@@ -107,17 +107,11 @@ function save() {
     var values = new Set();
     for (var i = 1; i < table.rows.length; i++) {
         var row = table.rows.item(i).cells;
-        values.add({ RelationId: row.item(4).innerHTML.value, Grade: row.item(0).innerHTML });
-        alert("grade: " + row.item(4).innerHTML.value);
-        alert("relationid: " + row.item(5).innerHTML);
-        alert("relationid2: " + row.item(6).innerHTML);
-        alert("grade2: " + table.rows[i].cells[4].children[0].value);
+        values.add({ RelationId: row.cells[6].innerHTML, Grade: row.cells[4].children[0].value });
     }
-    alert("grade:" + values[0].Grade);
     var datastring = JSON.stringify(values);
-    alert("datastring:" + datastring);
     sendsyncpostrequest(baseurl + '/setgrades?CourseId=' + coursename, datastring);
-    //TODO: Read list and send to server - wait for confirmation, else alert user that data is unsaved
+    //TODO: wait for confirmation, else alert user that data is unsaved
 }
 
 function back() {
