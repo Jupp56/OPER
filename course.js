@@ -27,7 +27,7 @@ function getdata() {
 function fillarr(array) {
 
     var table = document.getElementById("usertable");
-    table.deleteRow(1);
+    cleartable(table, false);
     var tablebody = document.getElementById("tablebody");
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
