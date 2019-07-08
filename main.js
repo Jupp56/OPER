@@ -3,7 +3,7 @@ var username = "testuser"; //TODO: load dynamically
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 function getcourses() {
-    fillarr(null) //testin!!!
+
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getcourses.php?user=" + username;
 
@@ -23,7 +23,6 @@ function getcourses() {
 }
 
 function fillarr(array) {
-    var array = new Array({ Course: "cours1", Participants: 5 });
 
     var table = document.getElementById("usertable");
     table.deleteRow(1);
