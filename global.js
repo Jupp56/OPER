@@ -12,8 +12,7 @@ function createtd(tdvalue, onclick, style) {
     var cellText = document.createTextNode(tdvalue);
     cell.appendChild(cellText);
     if (onclick) cell.onclick = onclick;
-    if(style) cell.style = style;
-    alert(cell.style);
+    if(style) cell.classList = style;
     return cell;
 }
 
