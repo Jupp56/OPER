@@ -1,12 +1,12 @@
 var currentaccount;
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
-function getusers() {
+function getparticipants() {
 
     var xmlHttp = new XMLHttpRequest();
-    var getusersurl = baseurl + "/getparticipants.php";
+    var url = baseurl + "/getparticipants.php";
 
-    xmlHttp.open("GET", getusersurl, true); //true for asynchronous request
+    xmlHttp.open("GET", url, true); //true for asynchronous request
 
     xmlHttp.onload = function(e) {
         if (xmlHttp.status === 200) {
@@ -54,11 +54,15 @@ function fillarr(array) {
         row.appendChild(createtd(array[i].LastName));
         row.appendChild(createtd(array[i].Username));
         row.appendChild(createtd(array[i].DateOfBirth));
+        row.appendChild(createbutton("Ergebnisse", "button-alt", showparticipantresults, array[i].UserId));
 
         tablebody.appendChild(row);
     }
 }
 
+function showparticipantresults(participantid) {
+    window.location.href = "/participantresults.php?ParticipantId=" + participantid;
+}
 
 function cleartable(table) {
     for (var i = table.rows.length - 1; i > 0; i--) {
@@ -81,7 +85,6 @@ function hidesingleparticipant() {
 
 function showcreateparticipant() {
     document.getElementById("createaccountwindow").style.width = "100%";
-    document.getElementById("Password-Create").value = Math.random().toString(36).slice(-8);
 }
 
 function hidecreateparticipant() {
@@ -92,7 +95,7 @@ function sendcreateparticipant() {
     hidecreateaccount();
     document.getElementById("createaccountform").submit();
     resetcreateaccount();
-    getusers();
+    getparticipants();
 }
 
 function resetcreateparticipant() {
@@ -107,7 +110,7 @@ function deleteparticipantconfirm() {
     var url = baseurl + "/deleteuser.php?user=" + currentaccount;
     alert(sendsyncgetrequest(url).toString());
     document.getElementById("deletewindow").style.width = "0%";
-    getusers();
+    getparticipants();
 }
 
 function deleteparticipantdeny() {
@@ -119,4 +122,4 @@ function logout() {
     window.location.href = 'logout.php';
 }
 
-window.onload = getusers;
+window.onload = getparticipants;

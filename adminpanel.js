@@ -1,7 +1,7 @@
 var currentaccount;
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
-function getusers() {
+function getparticipants() {
 
     var xmlHttp = new XMLHttpRequest();
     var getusersurl = baseurl + "/getusers.php";
@@ -95,7 +95,7 @@ function sendcreateaccount() {
     hidecreateaccount();
     document.getElementById("createaccountform").submit();
     resetcreateaccount();
-    getusers();
+    getparticipants();
 }
 
 function resetcreateaccount() {
@@ -111,7 +111,7 @@ function deleteaccountconfirm() {
     var url = baseurl + "/deleteuser.php?user=" + currentaccount;
     alert(sendsyncgetrequest(url).toString());
     document.getElementById("deletewindow").style.width = "0%";
-    getusers();
+    getparticipants();
 }
 
 function deleteaccountdeny() {
@@ -122,4 +122,4 @@ function logout() {
     window.location.href = 'logout.php';
 }
 
-window.onload = getusers;
+window.onload = getparticipants;

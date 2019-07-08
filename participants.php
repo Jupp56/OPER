@@ -42,6 +42,7 @@ require_once('adminauth.php');
                                 <th>Nachname</th>
                                 <th>BenutzerID</th>
                                 <th>Geburtsdatum</th>
+                                <th>Kursergebnisse</th>
                             </thead>
                             <tbody id="participanttablebody">
                                 <tr>
