@@ -12,7 +12,7 @@ if (mysqli_connect_errno()) {
 $stmt = $mysqli->prepare('INSERT INTO Courses (Name, CreatorId) VALUES (?, ?)');
 $stmt->bind_param("si", $coursename, $userid);
 
-$coursename = $_POST['CourseName'];
+$coursename = $_GET['CourseName'];
 $userid = $_COOKIE['user'];
 
 if ($stmt->execute()){
