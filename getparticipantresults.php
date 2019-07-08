@@ -9,8 +9,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->query('SELECT courses.Name AS CourseName, Grade FROM courseparticipants '
-.'INNER JOIN courses ON courses.Id=courseparticipants.CourseId INNER JOIN participants ON participants.Id=courseparticipants.ParticipantId WHERE ParticipantId=?');
+$stmt = $mysqli->query('SELECT courses.Name AS CourseName, Grade FROM courseparticipants INNER JOIN courses ON courses.Id=courseparticipants.CourseId INNER JOIN participants ON participants.Id=courseparticipants.ParticipantId WHERE ParticipantId=?');
 $stmt->bind_param("i", $_GET['ParticipantId']);
 
 $users = array();
