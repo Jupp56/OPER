@@ -14,6 +14,8 @@ $stmt->bind_param('i', $userid);
 $userid = $_COOKIE['user'];
 $stmt->bind_result($name, $id);
 
+$stmt->execute();
+
 $users = array();
 
 while ($stmt->fetch()){
