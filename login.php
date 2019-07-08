@@ -24,14 +24,15 @@ if ($stmt->execute()){
     $hashed = hash("sha256", $_POST['Password'].$salt);
     if ($hashed == $hash) {
         $token = bin2hex(random_bytes(64));
-        $stmt = $mysqli->prepare('UPDATE Users SET Token=? WHERE Username LIKE BINARY ?');
-        $stmt->bind_param("ss", $token, $username);
+        $stmt = $mysqli->prepare('UPDATE Users SET Token=? WHERE Id=?');
+        $stmt->bind_param("si", $token, $userid);
         if (!$stmt->execute()) {
             header("HTTP/1.1 500 Internal Server Error");
             echo $stmt->error;
         }
         setcookie("user", $userid);
-		setcookie("token", $token);
+        setcookie("token", $token);
+        setcookie("username", $username);
         if ($isAdmin) header('Location: adminpanel.php');
         else header('Location: main.php');
         exit();

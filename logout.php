@@ -20,6 +20,7 @@ if (!$stmt->execute()) {
 
 setcookie('token');
 setcookie('user');
+setcookie('username');
 header('Location: index.php');
 exit();
 ?>
