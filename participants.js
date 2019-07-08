@@ -27,8 +27,13 @@ function getparticipants() {
 
 function fillarr(array) {
 
+    array = [
+        { FirstName: "Anita", LastName: "Breitacher", DateOfBirth: "1998-07-03", UserId: 1542 },
+        { FirstName: "Reinhard", LastName: "Mey", DateOfBirth: "1967-09-01", UserId: 99 }
+    ]
+
     var table = document.getElementById("participanttable");
-    cleartable(document.getElementById("participanttable"));
+    cleartable(table);
     var tablebody = document.getElementById("participanttablebody");
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
