@@ -48,7 +48,7 @@ function createbutton(text, buttonclass, onclickaction, onclickparameter) {
 }
 
 function cleartable(table) {
-    for (var i = table.rows.length - 1; i >= 0; i--) {
+    for (var i = table.rows.length - 1; i > 0; i--) {
         table.deleteRow(i);
     }
 }
