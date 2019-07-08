@@ -32,7 +32,7 @@ function fillarr(array) {
         var createClickHandler =
             function(array, i) {
                 return function(event) {
-                    window.location.href = baseurl + '/course.php?course=' + array[i].CourseId;
+                    window.location.href = baseurl + '/course.php?Id=' + array[i].CourseId;
                     //What happens, when you click on a row
                 };
             };
