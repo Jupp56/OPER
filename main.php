@@ -79,7 +79,7 @@ require_once('auth.php');
                         <table id="coursetable" class="table table-striped table-hover">
                             <thead>
                                 <th>Kurs</th>
-                                <th>Teilnehmerzahl</th>
+                                <th>KursID</th>
                                 <th>Entfernen</th>
                             </thead>
                             <tbody id="coursetablebody">
