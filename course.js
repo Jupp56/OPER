@@ -72,7 +72,7 @@ function search() {
     var resultfield = document.getElementById("searchresults");
     var searchterm = document.getElementById("participantsearchbox").value;
     try {
-        var allusers = JSON.parse(sendgetrequest(baseurl + '/getparticipants.php'));
+        var allusers = JSON.parse(sendsyncgetrequest(baseurl + '/getparticipants.php'));
     } catch (e) {
         console.log("could not get participants to search. Error:" + e)
         return;
