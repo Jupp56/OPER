@@ -30,7 +30,7 @@
 
                 <div class="row mt-4">
                     <div class="col-4">
-                        <a href="index.html">zurück</a>
+                        <a href="index.php">zurück</a>
                     </div>
                     <div class="col-8">
                         <button class="float-right">
