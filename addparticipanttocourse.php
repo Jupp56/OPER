@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
 }
 
 $stmt = $mysqli->prepare('INSERT INTO CourseParticipants (CourseId, ParticipantId) VALUES(IF((SELECT CreatorId FROM courses WHERE Id=?)=?, ?, -1), ?)');
-$stmt->bind_param("ii", $courseid, $userid, $courseid, $participantid);
+$stmt->bind_param("iiii", $courseid, $userid, $courseid, $participantid);
 
 $courseid = $_POST['CourseId'];
 $userid = $_COOKIE['user'];
