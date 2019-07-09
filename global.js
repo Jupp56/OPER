@@ -97,6 +97,5 @@ function eraseCookie(name) {
 }
 
 function validateFloat(sender) {
-    if (!parseFloat(sender.value)) sender.className = "invalid";
-    alert(parseFloat(sender.value));
+    if (isNaN(parseFloat(sender.value))) sender.className = "invalid";
 }
