@@ -85,9 +85,9 @@ require_once('adminauth.php');
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <div class="float-left">Alter Benutzername:</div>
+                            <div class="float-left">BenuterID:</div>
                         </div>
-                        <div class="col"><input id="Username-Single-Old" class="float-right disabled" type="text" name="OriginalUsername" readonly></div>
+                        <div class="col"><input id="UserId-Single" class="float-right disabled" type="text" name="UserId" readonly></div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">

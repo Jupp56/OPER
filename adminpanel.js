@@ -42,10 +42,9 @@ function fillarr(array) {
                     document.getElementById("LastName-Single").value = dataset.LastName;
                     document.getElementById("DateOfBirth-Single").value = dataset.DateOfBirth;
                     document.getElementById("Username-Single").value = dataset.Username;
-                    document.getElementById("Username-Single-Old").value = dataset.Username;
+                    document.getElementById("UserId-Single").value = dataset.Id;
                     document.getElementById("Mail-Single").value = dataset.Mail;
                     currentaccount = thisusername;
-                    //Zu bearbeitende Daten holen und anzeigen
                 };
             };
 
