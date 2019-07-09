@@ -1,6 +1,6 @@
 window.onload = getdata;
 var userid = readCookie("user");
-var coursename = window.location.href.split('=')[1]; //TODO: schöner!!!
+var coursename = parseInt(window.location.href.split('=')[1]); //TODO: schöner!!!
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 var unsaved = false;
 
