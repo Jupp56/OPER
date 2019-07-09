@@ -9,10 +9,11 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('INSERT INTO CourseParticipants (CourseId, ParticipantId) VALUES(IF((SELECT CreatorId FROM courses WHERE Id=1)=3, ?, -1), ?)');
-$stmt->bind_param("ii", $courseid, $participantid);
+$stmt = $mysqli->prepare('INSERT INTO CourseParticipants (CourseId, ParticipantId) VALUES(IF((SELECT CreatorId FROM courses WHERE Id=?)=?, ?, -1), ?)');
+$stmt->bind_param("ii", $courseid, $userid, $courseid, $participantid);
 
 $courseid = $_POST['CourseId'];
+$userid = $_COOKIE['user'];
 $participantid = $_POST['ParticipantId'];
 
 if ($stmt->execute()){
