@@ -1,5 +1,5 @@
 <div id="userdata" class="row">
-    <div class="col myborder">
+    <div class="col-auto myborder">
         <form action="logout.php">
             Benutzer: <?php print($_COOKIE['username']); ?><br>
             <input class="hidden" name="username" value="<?php print($_COOKIE['user']); ?>">
