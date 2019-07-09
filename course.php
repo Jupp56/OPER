@@ -78,8 +78,6 @@
                         </div>
                     </div>
 
-
-
                     <div class="row mt-4">
                         <div class="col"><button class="float-left button-alt" type="button" onclick="hideaddparticipant()">Abbrechen</button></div>
                         <div class="col"><button class="float-right" type="submit" onclick="addparticipant()">Hinzufügen</button></div>

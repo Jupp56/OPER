@@ -32,7 +32,7 @@ function createinput(currentordefaultvalue) {
     var cell = document.createElement("td");
     var inputfield = document.createElement("input");
     inputfield.value = currentordefaultvalue;
-    inputfield.onchange = changeoccured;
+    inputfield.onchange = validateFloat;
     cell.appendChild(inputfield);
     return cell;
 }
@@ -94,4 +94,8 @@ function readCookie(name) {
 
 function eraseCookie(name) {
     createCookie(name, "", -1);
+}
+
+function validateFloat(sender){
+    if(!parseFloat(sender.value)) sender.className = "invalid";
 }

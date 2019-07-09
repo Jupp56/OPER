@@ -137,3 +137,7 @@ tbody tr {
 .aboveall {
     z-index: 1;
 }
+
+.invalid {
+    border-color: red !important;
+}
