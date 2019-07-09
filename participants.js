@@ -67,10 +67,12 @@ function deleteparticipantdeny() {
 }
 
 function deleteparticipantconfirm() {
-    sendsyncgetrequest(baseurl + "deleteparticipant.php?ParticipantId=" + currentparticipant);
+    var url = baseurl + "/deleteparticipant.php?ParticipantId=" + currentparticipant;
+    sendsyncgetrequest(url);
     hidedeleteparticipant();
     getparticipants();
 }
+
 
 function getdetails() {
     console.log("details");
@@ -103,20 +105,8 @@ function resetcreateparticipant() {
     document.getElementById("createaccountform").reset();
 }
 
-function deleteparticipant() {
-    document.getElementById("deletewindow").style.width = "100%";
-}
 
-function deleteparticipantconfirm() {
-    var url = baseurl + "/deleteuser.php?user=" + currentparticipant;
-    alert(sendsyncgetrequest(url).toString());
-    document.getElementById("deletewindow").style.width = "0%";
-    getparticipants();
-}
 
-function deleteparticipantdeny() {
-    document.getElementById("deletewindow").style.width = "0%";
-}
 
 
 function logout() {
