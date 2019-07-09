@@ -9,9 +9,9 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$stmt = $mysqli->prepare('DELETE FROM Users WHERE Username LIKE BINARY ?');
-$stmt->bind_param("s", $username);
-$username = $_GET['user'];
+$stmt = $mysqli->prepare('DELETE FROM Users WHERE Id=?');
+$stmt->bind_param("i", $userid);
+$userid = $_GET['user'];
 
 if ($stmt->execute()){
     header("Location: adminpanel.php?message=Successfully%20deleted");
