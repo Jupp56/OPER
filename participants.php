@@ -112,12 +112,12 @@ require_once('adminauth.php');
                 </div>
                 <div class="row mt-4">
                     <div class="col">
-                        <button class="float-left button-alt" type="button" onclick="deleteaccountdeny();">
+                        <button class="float-left button-alt" type="button" onclick="deleteparticipantdeny();">
                             Abbrechen
                         </button>
                     </div>
                     <div class="col">
-                        <button class="float-right button-warn" type="button" onclick="deleteaccountconfirm()">
+                        <button class="float-right button-warn" type="button" onclick="deleteparticipantconfirm()">
                             Löschen
                         </button>
                     </div>

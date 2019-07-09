@@ -1,4 +1,4 @@
-var currentaccount;
+var currentparticipant;
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 function getparticipants() {
@@ -8,7 +8,7 @@ function getparticipants() {
 
     xmlHttp.open("GET", url, true); //true for asynchronous request
 
-    xmlHttp.onload = function(e) {
+    xmlHttp.onload = function (e) {
         if (xmlHttp.status === 200) {
             var result = xmlHttp.responseText;
             try {
@@ -39,6 +39,7 @@ function fillarr(array) {
         row.appendChild(createtd(array[i].Id));
         row.appendChild(createtd(array[i].DateOfBirth));
         row.appendChild(createbutton("Ergebnisse", "button-alt", showparticipantresults, array[i].Id));
+        row.appendChild(createbutton("Löschen", "button-warn", deleteparticipant, array[i].Id));
 
         tablebody.appendChild(row);
     }
@@ -48,7 +49,23 @@ function showparticipantresults(participantid) {
     window.location.href = baseurl + "/participantresults.php?ParticipantId=" + participantid;
 }
 
+function deleteparticipant(participant) {
+    currentparticipant = participant;
+    showdeleteparticipant();
+}
 
+function showdeleteparticipant() {
+    document.getElementById("deletewindow").style.width = "100%";
+}
+
+function deleteparticipantdeny() {
+    document.getElementById("deletewindow").style.width = "0%";
+    currentparticipant = null;
+}
+
+function deleteparticipantconfirm() {
+    sendsyncgetrequest(baseurl + "deleteparticipant.php?ParticipantId=" + currentparticipant);
+}
 
 function getdetails() {
     console.log("details");
