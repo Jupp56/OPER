@@ -9,7 +9,7 @@ require_once('adminauth.php');
 <head>
     <meta charset="utf-8">
     <title>OPER-Admin Panel</title>
-
+    <link rel="icon" type="image/svg+xml" href="images/DLRG_Logo.svg" sizes="any">
     <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="styles.css">
     <script lang="javascript" type="text/javascript" src="global.js"></script>

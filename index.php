@@ -2,7 +2,7 @@
 
 <head>
     <title>OPER-Login</title>
-
+    <link rel="icon" type="image/svg+xml" href="images/DLRG_Logo.svg" sizes="any">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8">
