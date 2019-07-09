@@ -108,7 +108,7 @@ function deleteparticipant() {
 }
 
 function deleteparticipantconfirm() {
-    var url = baseurl + "/deleteuser.php?user=" + currentaccount;
+    var url = baseurl + "/deleteuser.php?user=" + currentparticipant;
     alert(sendsyncgetrequest(url).toString());
     document.getElementById("deletewindow").style.width = "0%";
     getparticipants();
