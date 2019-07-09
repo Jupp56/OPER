@@ -97,5 +97,8 @@ function eraseCookie(name) {
 }
 
 function validateFloat(sender) {
-    if (isNaN(parseFloat(sender.value))) { alert("dieser Wert stimmt so noch nicht"); sender.className = "invalid"; }
+    /*if (isNaN(parseFloat(sender.value))) {
+        alert("dieser Wert stimmt so noch nicht");
+        sender.className = "invalid";
+    }*/
 }
