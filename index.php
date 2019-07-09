@@ -69,7 +69,7 @@
 
                         <div class="row  mt-3">
                             <div class="col">
-                                <a href="forgotpassword.html">Passwort vergessen</a>
+                                <a href="forgotpassword.php">Passwort vergessen</a>
                             </div>
                             <div class="col ">
 
