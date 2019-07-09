@@ -109,9 +109,11 @@ function save() {
         values[i - 1] = ({ RelationId: table.rows[i].cells[6].innerHTML, Grade: table.rows[i].cells[4].children[0].value });
     }
 
-    var datastring = JSON.stringify(values);
+    var parameters = {};
+    parameters["CorseId"] = coursename;
+    parameters["JsonData"] = values 
 
-    sendsyncpostrequest(baseurl + '/setgrades?CourseId=' + coursename, datastring);
+    sendsyncpostrequest(baseurl + '/setgrades?CourseId=' + coursename, parameters);
     //TODO: Read list and send to server - wait for confirmation, else alert user that data is unsaved
 }
 

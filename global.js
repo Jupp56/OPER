@@ -10,8 +10,8 @@ function sendsyncgetrequest(url) {
 function sendsyncpostrequest(url, data) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("POST", url, false); //true for asynchronous request
-
-    xmlHttp.send(data);
+    xmlHttp.setRequestHeader("Content-type", "application/json");
+    xmlHttp.send(JSON.stringify(data));
     return xmlHttp.responseText;
 }
 
