@@ -8,6 +8,8 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
+$_POST = json_decode(file_get_contents("php://input"), true);
+
 $stmt = $mysqli->prepare("SELECT CreatorId FROM Courses WHERE Id=?");
 $stmt->bind_param("i", $_POST['CourseId']);
 $stmt->bind_result($creatorid);
