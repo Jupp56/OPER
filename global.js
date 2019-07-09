@@ -12,7 +12,7 @@ function sendsyncpostrequest(url, data) {
     xmlHttp.open("POST", url, false); //true for asynchronous request
     xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     var datastring = "";
-    for (var key in data){
+    for (var key in data) {
         datastring += encodeURIComponent(key) + "=" + encodeURIComponent(data[key]) + "&";
     }
     xmlHttp.send(datastring);
@@ -24,7 +24,7 @@ function createtd(tdvalue, onclick, style) {
     var cellText = document.createTextNode(tdvalue);
     cell.appendChild(cellText);
     if (onclick) cell.onclick = onclick;
-    if(style) cell.classList = style;
+    if (style) cell.classList = style;
     return cell;
 }
 
@@ -53,7 +53,7 @@ function createbutton(text, buttonclass, onclickaction, onclickparameter) {
     button.textContent = text;
     button.className = buttonclass;
 
-    button.onclick = function() {
+    button.onclick = function () {
         onclickaction(onclickparameter);
     };
 
@@ -96,6 +96,7 @@ function eraseCookie(name) {
     createCookie(name, "", -1);
 }
 
-function validateFloat(sender){
-    if(!parseFloat(sender.value)) sender.className = "invalid";
+function validateFloat(sender) {
+    if (!parseFloat(sender.value)) sender.className = "invalid";
+    alert(parseFloat(sender.value));
 }
