@@ -129,7 +129,7 @@ tbody tr {
     border: none;
 }
 
-input .disabled {
+.disabled {
     background-color: rgb(163, 163, 163);
 }
 

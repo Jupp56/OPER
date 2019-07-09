@@ -22,12 +22,10 @@ require_once('adminauth.php');
         <?php
         include 'userdata.php';
         ?>
-        <div class="row ml-5 mt-2">
-            <div class="col"><a href="participants.php"><button class="button-alt">Teilnehmerverwaltung</button></a></div>
-        </div>
 
 
         <div id="addaccount" class="row ml-5 mr-5">
+        <div class="col"><a href="participants.php"><button class="button-alt">Teilnehmerverwaltung</button></a></div>
             <div class="col"><button class="float-right" onclick="showcreateaccount()">Neuer Account</button></div>
         </div>
 
@@ -91,7 +89,7 @@ require_once('adminauth.php');
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <div class="float-left">Neuer Benutzername:</div>
+                            <div class="float-left">Benutzername:</div>
                         </div>
                         <div class="col"><input id="Username-Single" class="float-right" type="text" name="Username"></div>
                     </div>
