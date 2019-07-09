@@ -24,11 +24,11 @@ require_once('adminauth.php');
         include 'userdata.php';
         ?>
 
-        <div class="row ml-5 mt-2">
+        <div class="row ml-5 mt-4 mt-2">
             <div class="col"><a href="adminpanel.php"><button class="button-alt">Benutzerverwaltung</button></a></div>
         </div>
 
-        <div id="buttons" class="row ml-5 mt-5 mr-5">
+        <div id="buttons" class="row ml-5 mt-4 mr-5">
             <div class="col"><button class="float-left" onclick="back()">Zurück</button>
             </div>
         </div>
