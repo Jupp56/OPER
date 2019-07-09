@@ -13,14 +13,12 @@ $stmt->bind_param("i", $_POST['CourseId']);
 $stmt->bind_result($creatorid);
 
 if ($stmt->execute()){
-    $confirmed = false;
-    while ($stmt->fetch()){
-        if ($creatorid == $_COOKIE['user']) $confirmed = true;
-    }
-    if (!$confirmed){
+    $stmt->fetch();
+    if ($creatorid != $_COOKIE['user']){
         header('HTTP/1.0 403 Forbidden');
         exit();
     }
+    while ($stmt->fetch()){}
 } else {
     header("HTTP/1.1 500 Internal Server Error");
     echo $stmt->error;
