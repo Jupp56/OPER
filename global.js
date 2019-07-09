@@ -10,8 +10,12 @@ function sendsyncgetrequest(url) {
 function sendsyncpostrequest(url, data) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("POST", url, false); //true for asynchronous request
-    xmlHttp.setRequestHeader("Content-type", "application/json");
-    xmlHttp.send(JSON.stringify(data));
+    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    var datastring = "";
+    for (var key in data){
+        datastring += encodeURIComponent(key) + "=" + encodeURIComponent(data[key]) + "&";
+    }
+    xmlHttp.send(datastring);
     return xmlHttp.responseText;
 }
 

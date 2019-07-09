@@ -8,8 +8,6 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$_POST = json_decode(file_get_contents("php://input"), true);
-
 $stmt = $mysqli->prepare("SELECT CreatorId FROM Courses WHERE Id=?");
 $stmt->bind_param("i", $_POST['CourseId']);
 $stmt->bind_result($creatorid);
@@ -29,7 +27,7 @@ if ($stmt->execute()){
     exit();
 }
 
-$arr = $_POST['JsonData'];
+$arr = json_decode($_POST['JsonData'], true);
 $count = 0;
 foreach ($arr as $row){
     $stmt = $mysqli->prepare('UPDATE CourseParticipants SET Grade=? WHERE Id=?');
