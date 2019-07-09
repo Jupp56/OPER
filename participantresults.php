@@ -19,16 +19,19 @@ require_once('adminauth.php');
 
 <body>
     <div id="container">
+
         <?php
         include 'userdata.php';
         ?>
+
         <div class="row ml-5 mt-2">
             <div class="col"><a href="adminpanel.php"><button class="button-alt">Benutzerverwaltung</button></a></div>
         </div>
-        <div id="buttons" class="row ml-5 mt-5 mr-5">
-            <div class="col"><button class="float-left" onclick="back()">Zurück</button><div>
-        </div>
 
+        <div id="buttons" class="row ml-5 mt-5 mr-5">
+            <div class="col"><button class="float-left" onclick="back()">Zurück</button>
+            </div>
+        </div>
         <div id="accountlist" class="container-fluid mt-5">
             <div class="row flex-xl-nowrap ml-5 mt-2 mr-5">
                 <main class="col-12" role="main">
@@ -50,12 +53,11 @@ require_once('adminauth.php');
 
             </div>
         </div>
-
-
-        <?php
-        include 'footer.php';
-        ?>
     </div>
+
+    <?php
+    include 'footer.php';
+    ?>
 </body>
 
 </html>
