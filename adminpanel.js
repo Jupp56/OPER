@@ -104,6 +104,7 @@ function deleteaccountconfirm() {
     var url = baseurl + "/deleteuser.php?user=" + currentaccount;
     sendsyncgetrequest(url).toString();
     document.getElementById("deletewindow").style.width = "0%";
+    hidesingleaccount();
     getparticipants();
 }
 

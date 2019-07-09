@@ -113,7 +113,7 @@ require_once('adminauth.php');
                             </button>
                         </div>
                         <div class="col">
-                            <button class="float-right" type="submit" onclick="hidesingleaccount()">
+                            <button class="float-right" type="submit" onclick="getparticipants(); hidesingleaccount(); return true;">
                                 Ändern
                             </button>
                         </div>
