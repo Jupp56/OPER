@@ -29,7 +29,7 @@ if ($stmt->execute()){
     exit();
 }
 
-$arr = json_decode($_POST['JsonData'], true);
+$arr = $_POST['JsonData'];
 $count = 0;
 foreach ($arr as $row){
     $stmt = $mysqli->prepare('UPDATE CourseParticipants SET Grade=? WHERE Id=?');
