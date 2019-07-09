@@ -44,7 +44,7 @@ function fillarr(array) {
                     document.getElementById("Username-Single").value = dataset.Username;
                     document.getElementById("UserId-Single").value = dataset.Id;
                     document.getElementById("Mail-Single").value = dataset.Mail;
-                    currentaccount = thisusername;
+                    currentaccount = dataset.Id;
                 };
             };
 
