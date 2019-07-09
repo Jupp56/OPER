@@ -111,7 +111,7 @@ function save() {
 
     var parameters = {};
     parameters["CourseId"] = coursename;
-    parameters["JsonData"] = values 
+    parameters["JsonData"] = values;
 
     sendsyncpostrequest(baseurl + '/savecourse.php', parameters);
     //TODO: Read list and send to server - wait for confirmation, else alert user that data is unsaved
