@@ -57,14 +57,19 @@ function deleteparticipant(participant) {
 function showdeleteparticipant() {
     document.getElementById("deletewindow").style.width = "100%";
 }
+function hidedeleteparticipant() {
+    document.getElementById("deletewindow").style.width = "0%";
+}
 
 function deleteparticipantdeny() {
-    document.getElementById("deletewindow").style.width = "0%";
+    hidedeleteparticipant();
     currentparticipant = null;
 }
 
 function deleteparticipantconfirm() {
     sendsyncgetrequest(baseurl + "deleteparticipant.php?ParticipantId=" + currentparticipant);
+    hidedeleteparticipant();
+    getparticipants();
 }
 
 function getdetails() {

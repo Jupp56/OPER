@@ -108,7 +108,10 @@ require_once('adminauth.php');
 
         <div id="deletewindow" class="overlay">
             <div class="overlay-content">
-                <div class="row">
+            <div class="row">
+                    <div class="col"><h2>Teilnehmer löschen</h2></div>
+                </div>
+                <div class="row mt-2">
                     <div class="col">Diese/n Teilnehmer*in - und <strong> alle seine/ihre Daten </strong> wirklich löschen?</div>
                 </div>
                 <div class="row mt-4">
