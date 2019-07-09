@@ -15,7 +15,10 @@ $stmt->bind_result($creatorid);
 if ($stmt->execute()){
     $confirmed = false;
     while ($stmt->fetch()){
-        if ($creatorid == $_COOKIE['user']) $confirmed = true;
+        if ($creatorid == $_COOKIE['user']){
+            $confirmed = true;
+            echo 'confirmed';
+        }
     }
     if (!$confirmed){
         header('HTTP/1.0 403 Forbidden');
