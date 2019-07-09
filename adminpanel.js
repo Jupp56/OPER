@@ -102,7 +102,7 @@ function deleteaccount() {
 
 function deleteaccountconfirm() {
     var url = baseurl + "/deleteuser.php?user=" + currentaccount;
-    alert(sendsyncgetrequest(url).toString());
+    sendsyncgetrequest(url).toString();
     document.getElementById("deletewindow").style.width = "0%";
     getparticipants();
 }
