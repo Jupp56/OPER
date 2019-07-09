@@ -25,7 +25,7 @@ require_once('adminauth.php');
         ?>
 
 
-        <div id="addaccount" class="row ml-5 mt-2 mr-5">
+        <div id="addaccount" class="row ml-5 mt-4 mr-5">
             <div class="col"><a href="participants.php"><button class="button-alt">Teilnehmerverwaltung</button></a></div>
             <div class="col"><button class="float-right" onclick="showcreateaccount()">Neuer Account</button></div>
         </div>

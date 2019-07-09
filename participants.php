@@ -23,7 +23,7 @@ require_once('adminauth.php');
         include 'userdata.php';
         ?>
 
-        <div id="addparticipant" class="row ml-5 mt-2 mr-5">
+        <div id="addparticipant" class="row ml-5 mt-4 mr-5">
             <div class="col"><a href="adminpanel.php"><button class="button-alt">Benutzerverwaltung</button></a></div>
             <div class="col"><button class="float-right" onclick="showcreateparticipant()">Neuer Teilnehmer</button></div>
         </div>
