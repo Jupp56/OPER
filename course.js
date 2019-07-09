@@ -110,7 +110,7 @@ function save() {
     }
 
     var parameters = {};
-    parameters["CorseId"] = coursename;
+    parameters["CourseId"] = coursename;
     parameters["JsonData"] = values 
 
     sendsyncpostrequest(baseurl + '/savecourse.php', parameters);
