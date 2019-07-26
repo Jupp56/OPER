@@ -55,7 +55,7 @@
                                 Benutzername:
                             </div>
                             <div class="col">
-                                <input name="Username">
+                                <input name="Username" required>
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -63,7 +63,7 @@
                                 Passwort:
                             </div>
                             <div class="col">
-                                <input name="Password" type="password">
+                                <input name="Password" type="password" required>
                             </div>
                         </div>
 

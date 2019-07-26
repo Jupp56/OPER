@@ -63,7 +63,7 @@
                         <div class="col">
                             <div class="row">
                                 <div class="col">
-                                    <input id="participantsearchbox" type="text" oninput="search()">
+                                    <input id="participantsearchbox" type="text" oninput="search()" required>
                                     <input id="participantsearchedcourseid" class="hidden" type="text" name="CourseId">
                                     <input id="participantsearchedparticipantid" class="hidden" type="text" name="ParticipantId">
                                 </div>
@@ -80,7 +80,7 @@
 
                     <div class="row mt-4">
                         <div class="col"><button class="float-left button-alt" type="button" onclick="hideaddparticipant()">Abbrechen</button></div>
-                        <div class="col"><button class="float-right" type="submit" onclick="addparticipant()">Hinzufügen</button></div>
+                        <div class="col"><button class="float-right" type="submit" onsubmit="hideaddparticipant()">Hinzufügen</button></div>
                     </div>
                 </form>
             </div>

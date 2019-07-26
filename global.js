@@ -53,7 +53,7 @@ function createbutton(text, buttonclass, onclickaction, onclickparameter) {
     button.textContent = text;
     button.className = buttonclass;
 
-    button.onclick = function () {
+    button.onclick = function() {
         onclickaction(onclickparameter);
     };
 
@@ -97,8 +97,9 @@ function eraseCookie(name) {
 }
 
 function validateFloat(sender) {
-    /*if (isNaN(parseFloat(sender.value))) {
+    alert("Wert: " + sender);
+    if (isNaN(parseFloat(sender.value))) {
         alert("dieser Wert stimmt so noch nicht");
         sender.className = "invalid";
-    }*/
+    }
 }

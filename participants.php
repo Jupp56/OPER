@@ -66,19 +66,19 @@ require_once('adminauth.php');
                         <div class="col">
                             <div class=" float-left">Vorname:</div>
                         </div>
-                        <div class="col"><input id="FirstName-Single" class="float-right" type="text" name="FirstName"></div>
+                        <div class="col"><input id="FirstName-Single" class="float-right" type="text" name="FirstName" required></div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
                             <div class=" float-left">Nachname:</div>
                         </div>
-                        <div class="col"><input id="LastName-Single" class="float-right" type="text" name="LastName"></div>
+                        <div class="col"><input id="LastName-Single" class="float-right" type="text" name="LastName" required></div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
                             <div class=" float-left">Geburtsdatum:</div>
                         </div>
-                        <div class="col"><input id="DateOfBirth-Single" class="float-right" type="date" value="2000-01-01" name="DateOfBirth"></div>
+                        <div class="col"><input id="DateOfBirth-Single" class="float-right" type="date" value="2000-01-01" name="DateOfBirth" required></div>
                     </div>
 
                     <div class="row mt-4">
@@ -149,20 +149,20 @@ require_once('adminauth.php');
                         <div class="col">
                             <div class=" float-left">Vorname:</div>
                         </div>
-                        <div class="col"><input id="FirstName-Create" class="float-right" type="text" name="FirstName"></div>
+                        <div class="col"><input id="FirstName-Create" class="float-right" type="text" name="FirstName" required></div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
                             <div class=" float-left">Nachname:</div>
                         </div>
-                        <div class="col"><input id="LastName-Create" class="float-right" type="text" name="LastName"></div>
+                        <div class="col"><input id="LastName-Create" class="float-right" type="text" name="LastName" required></div>
                     </div>
 
                     <div class="row mt-2">
                         <div class="col">
                             <div class=" float-left">Geburtsdatum:</div>
                         </div>
-                        <div class="col"><input id="DateOfBirth-Create" class="float-right" type="date" value="2000-01-01" name="DateOfBirth"></div>
+                        <div class="col"><input id="DateOfBirth-Create" class="float-right" type="date" value="2000-01-01" name="DateOfBirth" required></div>
                     </div>
                     <div class="row mt-4">
                         <div class="col">

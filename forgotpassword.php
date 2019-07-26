@@ -24,7 +24,7 @@
                         Benutzername:
                     </div>
                     <div class="col">
-                        <input>
+                        <input type="text" required>
                     </div>
                 </div>
 

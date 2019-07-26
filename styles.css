@@ -138,6 +138,14 @@ tbody tr {
     z-index: 1;
 }
 
-.invalid {
-    border-color: red !important;
+input:-moz-placeholder,
+input:focus {
+    box-shadow: none !important;
+    border-color: lightgrey !important;
+}
+
+input:invalid {
+    border-width: 2px;
+    border-color: rgb(211, 23, 23);
+    border-style: solid;
 }

@@ -5,13 +5,13 @@ var baseurl = window.location.href.split('/').slice(0, window.location.href.spli
 var unsaved = false;
 
 function getdata() {
-
+    fillarr(null);
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getcourse.php?CourseId=" + coursename;
 
     xmlHttp.open("GET", url, true); //true for asynchronous request
 
-    xmlHttp.onload = function (e) {
+    xmlHttp.onload = function(e) {
         if (xmlHttp.status === 200) {
             var result = xmlHttp.responseText;
             console.log(xmlHttp.responseText);
@@ -25,7 +25,13 @@ function getdata() {
 }
 
 function fillarr(array) {
-
+    array = [{
+        FirstName: "Dr. Peter",
+        LastName: "Klöbner",
+        DateOfBirth: "22-08-5632",
+        Grade: 0,
+        RelationId: 87
+    }];
     var table = document.getElementById("participanttable");
     cleartable(table, false);
     var tablebody = document.getElementById("tablebody");
@@ -45,10 +51,6 @@ function fillarr(array) {
 function deleteaccountgrade(participantid) {
     sendsyncgetrequest(baseurl + "/removeparticipantfromcourse.php?RelationId=" + participantid)
     getdata();
-}
-
-function addparticipant() {
-    hideaddparticipant();
 }
 
 function showaddparticipant() {
@@ -83,7 +85,7 @@ function search() {
             var row = document.createElement("tr");
             row.appendChild(createtd(fullname));
             row.appendChild(createtd(participant.DateOfBirth))
-            row.onclick = function () {
+            row.onclick = function() {
                 document.getElementById("participantsearchbox").value = fullname;
                 document.getElementById("participantsearchedcourseid").value = coursename;
                 document.getElementById("participantsearchedparticipantid").value = participant.Id;
