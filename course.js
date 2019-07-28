@@ -5,7 +5,7 @@ var baseurl = window.location.href.split('/').slice(0, window.location.href.spli
 var unsaved = false;
 
 function getdata() {
-    fillarr(null);
+
     var xmlHttp = new XMLHttpRequest();
     var url = baseurl + "/getcourse.php?CourseId=" + coursename;
 
@@ -25,13 +25,7 @@ function getdata() {
 }
 
 function fillarr(array) {
-    array = [{
-        FirstName: "Dr. Peter",
-        LastName: "Klöbner",
-        DateOfBirth: "22-08-5632",
-        Grade: 0,
-        RelationId: 87
-    }];
+
     var table = document.getElementById("participanttable");
     cleartable(table, false);
     var tablebody = document.getElementById("tablebody");
