@@ -5,13 +5,14 @@
     <link rel="icon" type="image/svg+xml" href="images/DLRG_Logo.svg" sizes="any">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <script lang="javascript" type="text/javascript" src="global.js"></script>
     <meta charset="utf-8">
 
-    <script lang="javascript">
+    <!--<script lang="javascript">
         var msg = '<?php print($_GET['
         message ']); ?>';
         if (msg) alert(msg);
-    </script>
+    </script>-->
 
 </head>
 
