@@ -37,7 +37,10 @@ if ($stmt->execute()){
         else header('Location: main.php');
         exit();
     }
-    else echo "false";
+    else {
+        header('Location: index.php?message=Incorrect%20Password');
+        exit();
+    }
 } else {
     header("HTTP/1.1 500 Internal Server Error");
     echo $stmt->error;
