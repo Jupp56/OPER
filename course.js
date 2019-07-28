@@ -48,6 +48,7 @@ function deleteaccountgrade(participantid) {
 }
 
 function showaddparticipant() {
+    save();
     document.getElementById("addparticipantoverlay").style.width = "100%";
 }
 
@@ -112,8 +113,7 @@ function save() {
 }
 
 function back() {
-    if (unsaved = true) {
-        save();
-    }
+    save();
+
     window.location.href = baseurl + '/main.php';
 }
