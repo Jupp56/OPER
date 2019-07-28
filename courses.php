@@ -21,7 +21,12 @@ require_once('auth.php');
         include 'userdata.php';
         ?>
 
-
+        <div id="addaccount" class="row ml-5 mt-4 mr-5">
+            <div class="col"><a href="adminpanel.php"><button class="button-alt">Benutzerverwaltung</button></a></div>
+            <div class="col"><a href="participants.php"><button class="button-alt">Teilnehmerverwaltung</button></a></div>
+            <div class="col"><a href="courses.php"><button class="button">Kursverwaltung</button></a></div>
+            <div class="col"><div class="float-right"></div></div>
+        </div>
         <div id="courselist" class="container-fluid mt-3">
 
             <div class="row flex-xl-nowrap ml-5 mt-2 mr-5">
