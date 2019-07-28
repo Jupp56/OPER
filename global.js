@@ -1,7 +1,7 @@
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
 if (window.location.href.includes("message=")) {
-    alert(window.location.href.match(/message=.*/g));
+    alert(window.location.href.match(/message=.*/g).toString().slice(8));
 }
 
 
