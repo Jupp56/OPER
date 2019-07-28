@@ -32,7 +32,6 @@ function createinput(currentordefaultvalue) {
     var cell = document.createElement("td");
     var inputfield = document.createElement("input");
     inputfield.value = currentordefaultvalue;
-    inputfield.onchange = validateFloat;
     cell.appendChild(inputfield);
     return cell;
 }
@@ -94,12 +93,4 @@ function readCookie(name) {
 
 function eraseCookie(name) {
     createCookie(name, "", -1);
-}
-
-function validateFloat(sender) {
-    alert("Wert: " + sender);
-    if (isNaN(parseFloat(sender.value))) {
-        alert("dieser Wert stimmt so noch nicht");
-        sender.className = "invalid";
-    }
 }
