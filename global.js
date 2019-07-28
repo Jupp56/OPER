@@ -1,5 +1,10 @@
 var baseurl = window.location.href.split('/').slice(0, window.location.href.split('/').length - 1).toString().replace(/\,/g, '/');
 
+if (window.location.href.includes("message=")) {
+    alert(window.location.href.match(/message=.*/g).slice(8));
+}
+
+
 function sendsyncgetrequest(url) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url, false); //true for asynchronous request
