@@ -37,8 +37,8 @@ function fillarr(array) {
                 };
             };
 
-        row.appendChild(createtd(array[i].CourseName, createClickHandler(array, i)));
-        row.appendChild(createtd(array[i].CourseId, createClickHandler(array, i)));
+        row.appendChild(createtd(array[i].Name, createClickHandler(array, i)));
+        row.appendChild(createtd(array[i].Id, createClickHandler(array, i)));
         tablebody.appendChild(row);
     }
 }
